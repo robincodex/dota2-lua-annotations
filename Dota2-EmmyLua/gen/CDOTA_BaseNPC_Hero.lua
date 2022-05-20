@@ -5,7 +5,7 @@ CDOTA_BaseNPC_Hero = {}
 
 ---Params: Float XP, Bool applyBotDifficultyScaling
 ---@param flXP number
----@param nReason EDOTA_ModifyXP_Reason
+---@param nReason number
 ---@param bApplyBotDifficultyScaling boolean
 ---@param bIncrementTotal boolean
 ---@return boolean
@@ -179,7 +179,7 @@ function CDOTA_BaseNPC_Hero:GetPhysicalArmorBaseValue() end
 function CDOTA_BaseNPC_Hero:GetPlayerID() end
 
 ---0 = strength, 1 = agility, 2 = intelligence.
----@return Attributes
+---@return number
 function CDOTA_BaseNPC_Hero:GetPrimaryAttribute() end
 
 ---
@@ -400,7 +400,7 @@ function CDOTA_BaseNPC_Hero:SetGold(iGold, bReliable) end
 function CDOTA_BaseNPC_Hero:SetPlayerID(iPlayerID) end
 
 ---Set this hero's primary attribute value.
----@param nPrimaryAttribute Attributes
+---@param nPrimaryAttribute number
 ---@return nil
 function CDOTA_BaseNPC_Hero:SetPrimaryAttribute(nPrimaryAttribute) end
 
@@ -430,7 +430,7 @@ function CDOTA_BaseNPC_Hero:ShouldDoFlyHeightVisual() end
 
 ---Args: int nGold, int nReason
 ---@param iCost number
----@param iReason EDOTA_ModifyGold_Reason
+---@param iReason number
 ---@return nil
 function CDOTA_BaseNPC_Hero:SpendGold(iCost, iReason) end
 

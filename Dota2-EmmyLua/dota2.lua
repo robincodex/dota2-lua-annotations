@@ -1,4 +1,7 @@
 ---@class Vector
+---@field x number
+---@field y number
+---@field z number
 VectorTable = {}
 
 ---@param a Vector
@@ -29,6 +32,9 @@ function Vector(x, y, z) end
 Quaternion = {}
 
 ---@class QAngle
+---@field x number
+---@field y number
+---@field z number
 QAngleTable = {}
 
 ---@return QAngle
@@ -56,3 +62,23 @@ function json.encode(object, options) end
 
 ---@param content string
 function json.decode(content) end
+
+---@type CDOTA_BaseNPC
+thisEntity = {}
+
+---@return table
+function class(def, statics, base) end
+
+ACT_DOTA_ATTACK_STATUE = 0
+ACT_DOTA_ATTACK_TAUNT = 0
+ACT_DOTA_TAUNT_STATUE = 0
+ACT_DOTA_STUN_STATUE = 0
+ACT_DOTA_IDLE_STATUE = 0
+ACT_DOTA_LOADOUT_STATUE = 0
+ACT_DOTA_RUN_STATUE = 0
+
+---@return boolean
+function CBaseEntity:IsNull() end
+
+---@return number
+function GetLocalPlayerID() end

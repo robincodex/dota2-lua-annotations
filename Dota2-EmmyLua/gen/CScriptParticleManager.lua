@@ -8,14 +8,14 @@ ParticleManager = {}
 
 ---Creates a new particle effect
 ---@param particleName string
----@param particleAttach ParticleAttachment_t
+---@param particleAttach number
 ---@param owner CDOTA_BaseNPC?
 ---@return ParticleID
 function CScriptParticleManager:CreateParticle(particleName, particleAttach, owner) end
 
 ---Creates a new particle effect that only plays for the specified player
 ---@param particleName string
----@param particleAttach ParticleAttachment_t
+---@param particleAttach number
 ---@param owner CDOTA_BaseNPC?
 ---@param player CDOTAPlayer
 ---@return ParticleID
@@ -23,9 +23,9 @@ function CScriptParticleManager:CreateParticleForPlayer(particleName, particleAt
 
 ---Creates a new particle effect that only plays for the specified team
 ---@param particleName string
----@param particleAttach ParticleAttachment_t
+---@param particleAttach number
 ---@param owner CDOTA_BaseNPC?
----@param team DOTATeam_t
+---@param team number
 ---@return ParticleID
 function CScriptParticleManager:CreateParticleForTeam(particleName, particleAttach, owner, team) end
 
@@ -62,7 +62,7 @@ function CScriptParticleManager:SetParticleControl(particle, controlPoint, value
 ---@param particle ParticleID
 ---@param controlPoint number
 ---@param unit CDOTA_BaseNPC
----@param particleAttach ParticleAttachment_t
+---@param particleAttach number
 ---@param attachment string
 ---@param offset Vector
 ---@param lockOrientation boolean

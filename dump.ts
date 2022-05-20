@@ -70,6 +70,8 @@ async function fetchLuaServerEnumsFromModDota(): Promise<Record<string, ModDotaL
     return result;
 }
 
+const enumTypes = new Set<string>();
+
 function GetLuaType(returnString: string): string {
     switch (returnString) {
         case 'bool':
@@ -94,6 +96,9 @@ function GetLuaType(returnString: string): string {
             return 'Quaternion';
         case 'qangle':
             return 'QAngle';
+    }
+    if (enumTypes.has(returnString)) {
+        return 'number';
     }
     return returnString;
 }
@@ -170,13 +175,9 @@ async function StartDump() {
     if (!existsSync('Dota2-EmmyLua/gen')) {
         await mkdir('Dota2-EmmyLua/gen');
     }
-    const luaAPI = await fetchLuaServerAPIFromModDota();
-    for (const [className, api] of Object.entries(luaAPI)) {
-        await GenerateLuaFile(className, api);
-    }
-
     const enums = await fetchLuaServerEnumsFromModDota();
     {
+        Object.keys(enums).forEach((v) => enumTypes.add(v));
         let text = '';
         for (const list of Object.values(enums)) {
             for (const v of list) {
@@ -187,6 +188,11 @@ async function StartDump() {
             }
         }
         await writeFile('Dota2-EmmyLua/gen/enums.lua', text, 'utf8');
+    }
+
+    const luaAPI = await fetchLuaServerAPIFromModDota();
+    for (const [className, api] of Object.entries(luaAPI)) {
+        await GenerateLuaFile(className, api);
     }
 }
 

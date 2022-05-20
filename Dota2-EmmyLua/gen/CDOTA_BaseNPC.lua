@@ -158,7 +158,7 @@ function CDOTA_BaseNPC:EjectItemFromStash(hItem) end
 function CDOTA_BaseNPC:FaceTowards(vTarget) end
 
 ---Fade and remove the given gesture activity.
----@param nActivity GameActivity_t
+---@param nActivity number
 ---@return nil
 function CDOTA_BaseNPC:FadeGesture(nActivity) end
 
@@ -198,7 +198,7 @@ function CDOTA_BaseNPC:FindModifierByNameAndCaster(modifier_name, caster) end
 function CDOTA_BaseNPC:ForceKill(bReincarnate) end
 
 ---Play an activity once, and then go back to idle.
----@param nActivity GameActivity_t
+---@param nActivity number
 ---@return nil
 function CDOTA_BaseNPC:ForcePlayActivityOnce(nActivity) end
 
@@ -228,7 +228,7 @@ function CDOTA_BaseNPC:GetAggroTarget() end
 function CDOTA_BaseNPC:GetAttackAnimationPoint() end
 
 ---
----@return DOTAUnitAttackCapability_t
+---@return number
 function CDOTA_BaseNPC:GetAttackCapability() end
 
 ---Returns a random integer between the minimum and maximum base damage of the unit.
@@ -516,7 +516,7 @@ function CDOTA_BaseNPC:GetNeverMoveToClearSpace() end
 function CDOTA_BaseNPC:GetNightTimeVisionRange() end
 
 ---
----@return DOTATeam_t
+---@return number
 function CDOTA_BaseNPC:GetOpposingTeamNumber() end
 
 ---Get the collision hull radius (including padding) of this NPC.
@@ -831,7 +831,7 @@ function CDOTA_BaseNPC:IsNeutralUnitType() end
 function CDOTA_BaseNPC:IsNightmared() end
 
 ---
----@param nTeam DOTATeam_t
+---@param nTeam number
 ---@return boolean
 function CDOTA_BaseNPC:IsOpposingTeam(nTeam) end
 
@@ -944,13 +944,13 @@ function CDOTA_BaseNPC:MakeIllusion() end
 function CDOTA_BaseNPC:MakePhantomBlocker() end
 
 ---
----@param iTeam DOTATeam_t
+---@param iTeam number
 ---@param flRadius number
 ---@return nil
 function CDOTA_BaseNPC:MakeVisibleDueToAttack(iTeam, flRadius) end
 
 ---
----@param iTeam DOTATeam_t
+---@param iTeam number
 ---@param flDuration number
 ---@return nil
 function CDOTA_BaseNPC:MakeVisibleToTeam(iTeam, flDuration) end
@@ -1132,7 +1132,7 @@ function CDOTA_BaseNPC:RemoveAllModifiers(targets, bNow, bPermanent, bDeath) end
 function CDOTA_BaseNPC:RemoveAllModifiersOfName(pszScriptName) end
 
 ---Remove the given gesture activity.
----@param nActivity GameActivity_t
+---@param nActivity number
 ---@return nil
 function CDOTA_BaseNPC:RemoveGesture(nActivity) end
 
@@ -1205,7 +1205,7 @@ function CDOTA_BaseNPC:SetAdditionalBattleMusicWeight(flWeight) end
 function CDOTA_BaseNPC:SetAggroTarget(hAggroTarget) end
 
 ---
----@param iAttackCapabilities DOTAUnitAttackCapability_t
+---@param iAttackCapabilities number
 ---@return nil
 function CDOTA_BaseNPC:SetAttackCapability(iAttackCapabilities) end
 
@@ -1371,7 +1371,7 @@ function CDOTA_BaseNPC:SetMinimumGoldBounty(iGoldBountyMin) end
 function CDOTA_BaseNPC:SetModifierStackCount(pszScriptName, hCaster, nStackCount) end
 
 ---
----@param iMoveCapabilities DOTAUnitMoveCapability_t
+---@param iMoveCapabilities number
 ---@return nil
 function CDOTA_BaseNPC:SetMoveCapability(iMoveCapabilities) end
 
@@ -1451,7 +1451,7 @@ function CDOTA_BaseNPC:SpeakConcept(hCriteriaTable) end
 function CDOTA_BaseNPC:SpendMana(flManaSpent, hAbility) end
 
 ---Add the given gesture activity.
----@param nActivity GameActivity_t
+---@param nActivity number
 ---@return nil
 function CDOTA_BaseNPC:StartGesture(nActivity) end
 
@@ -1468,7 +1468,7 @@ function CDOTA_BaseNPC:StartGestureFadeWithSequenceSettings(nActivity) end
 function CDOTA_BaseNPC:StartGestureWithFade(nActivity, fFadeIn, fFadeOut) end
 
 ---Add the given gesture activity with a playback rate override.
----@param nActivity GameActivity_t
+---@param nActivity number
 ---@param flRate number
 ---@return nil
 function CDOTA_BaseNPC:StartGestureWithPlaybackRate(nActivity, flRate) end

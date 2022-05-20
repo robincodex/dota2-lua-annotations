@@ -207,11 +207,11 @@ function CBaseEntity:GetSoundDuration(soundname, actormodel) end
 function CBaseEntity:GetSpawnGroupHandle() end
 
 ---Get the team number of this entity.
----@return DOTATeam_t
+---@return number
 function CBaseEntity:GetTeam() end
 
 ---Get the team number of this entity.
----@return DOTATeam_t
+---@return number
 function CBaseEntity:GetTeamNumber() end
 
 ---Get the up vector of the entity.
@@ -401,7 +401,7 @@ function CBaseEntity:SetOwner(pOwner) end
 function CBaseEntity:SetParent(hParent, pAttachmentname) end
 
 ---
----@param iTeamNum DOTATeam_t
+---@param iTeamNum number
 ---@return nil
 function CBaseEntity:SetTeam(iTeamNum) end
 

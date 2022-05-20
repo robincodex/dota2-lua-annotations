@@ -1,7 +1,7 @@
 ---@diagnostic disable
 
 ---
----@param team DOTATeam_t
+---@param team number
 ---@param location Vector
 ---@param radius number
 ---@param duration number
@@ -68,7 +68,7 @@ function CancelEntityIOEvents(ehandle1) end
 function CenterCameraOnUnit(int1, handle2) end
 
 ---( teamNumber )
----@param team DOTATeam_t
+---@param team number
 ---@return nil
 function ClearTeamCustomHealthbarColor(team) end
 
@@ -201,7 +201,7 @@ function CreateUniformRandomStream(int1) end
 ---@param find_clear_space boolean
 ---@param npc_owner CBaseEntity?
 ---@param unit_owner CDOTAPlayer?
----@param team_number DOTATeam_t
+---@param team_number number
 ---@return CDOTA_BaseNPC
 function CreateUnitByName(unit_name, location, find_clear_space, npc_owner, unit_owner, team_number) end
 
@@ -211,7 +211,7 @@ function CreateUnitByName(unit_name, location, find_clear_space, npc_owner, unit
 ---@param findClearSpace boolean
 ---@param npcOwner CDOTA_BaseNPC?
 ---@param playerOwner CDOTAPlayer?
----@param team DOTATeam_t
+---@param team number
 ---@param callback fun(unit: CDOTA_BaseNPC): nil
 ---@return number
 function CreateUnitByNameAsync(unitName, location, findClearSpace, npcOwner, playerOwner, team, callback) end
@@ -536,25 +536,25 @@ function FindClearSpaceForUnit(unit, location, unknown) end
 function FindSpawnEntityForTeam(int1) end
 
 ---Find units that intersect the given line with the given flags.
----@param team DOTATeam_t
+---@param team number
 ---@param startPos Vector
 ---@param endPos Vector
 ---@param cacheUnit CBaseEntity
 ---@param width number
----@param teamFilter DOTA_UNIT_TARGET_TEAM
----@param typeFilter DOTA_UNIT_TARGET_TYPE
----@param flagFilter DOTA_UNIT_TARGET_FLAGS
+---@param teamFilter number
+---@param typeFilter number
+---@param flagFilter number
 ---@return CDOTA_BaseNPC[]
 function FindUnitsInLine(team, startPos, endPos, cacheUnit, width, teamFilter, typeFilter, flagFilter) end
 
 ---Finds the units in a given radius with the given flags.
----@param team DOTATeam_t
+---@param team number
 ---@param location Vector
 ---@param cacheUnit CBaseEntity
 ---@param radius number
----@param teamFilter DOTA_UNIT_TARGET_TEAM
----@param typeFilter DOTA_UNIT_TARGET_TYPE
----@param flagFilter DOTA_UNIT_TARGET_FLAGS
+---@param teamFilter number
+---@param typeFilter number
+---@param flagFilter number
 ---@param order number
 ---@param canGrowCache boolean
 ---@return CDOTA_BaseNPC[]
@@ -727,12 +727,12 @@ function GetTargetAOELocation(int1, int2, int3, vector4, int5, int6, int7) end
 function GetTargetLinearLocation(int1, int2, int3, vector4, int5, int6, int7) end
 
 ---( int teamID )
----@param team DOTATeam_t
+---@param team number
 ---@return number
 function GetTeamHeroKills(team) end
 
 ---( int teamID )
----@param team DOTATeam_t
+---@param team number
 ---@return string
 function GetTeamName(team) end
 
@@ -791,7 +791,7 @@ function IsDedicatedServer() end
 function IsInToolsMode() end
 
 ---Ask fog of war if a location is visible to a certain team (nTeamNumber, vLocation).
----@param team DOTATeam_t
+---@param team number
 ---@param location Vector
 ---@return boolean
 function IsLocationVisible(team, location) end
@@ -835,7 +835,7 @@ function LimitPathingSearchDepth(float1) end
 ---Link a lua-defined modifier with the associated class ( className, fileName, LuaModifierType).
 ---@param modifierName string
 ---@param filePath string
----@param motionController LuaModifierType
+---@param motionController number
 ---@return nil
 function LinkLuaModifier(modifierName, filePath, motionController) end
 
@@ -871,11 +871,11 @@ function MakeStringToken(cstring1) end
 function ManuallyTriggerSpawnGroupCompletion(int1) end
 
 ---Start a minimap event. (nTeamID, hEntity, nXCoord, nYCoord, nEventType, nEventDuration).
----@param team DOTATeam_t
+---@param team number
 ---@param entity CBaseEntity
 ---@param xCoord number
 ---@param yCoord number
----@param eventType DOTAMinimapEvent_t
+---@param eventType number
 ---@param duration number
 ---@return nil
 function MinimapEvent(team, entity, xCoord, yCoord, eventType, duration) end
@@ -1155,7 +1155,7 @@ function SetQuestPhase(int1) end
 function SetRenderingEnabled(ehandle1, bool2) end
 
 ---( teamNumber, r, g, b )
----@param team DOTATeam_t
+---@param team number
 ---@param r number
 ---@param g number
 ---@param b number

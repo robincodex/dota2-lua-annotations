@@ -8,7 +8,7 @@ CDOTA_Modifier_Lua_Vertical_Motion = {}
 function CDOTA_Modifier_Lua_Vertical_Motion:ApplyVerticalMotionController() end
 
 ---Get the priority
----@return modifierpriority
+---@return number
 function CDOTA_Modifier_Lua_Vertical_Motion:GetMotionPriority() end
 
 ---Called when the motion gets interrupted.
@@ -16,7 +16,7 @@ function CDOTA_Modifier_Lua_Vertical_Motion:GetMotionPriority() end
 function CDOTA_Modifier_Lua_Vertical_Motion:OnVerticalMotionInterrupted() end
 
 ---Set the priority
----@param nMotionPriority modifierpriority
+---@param nMotionPriority number
 ---@return nil
 function CDOTA_Modifier_Lua_Vertical_Motion:SetMotionPriority(nMotionPriority) end
 

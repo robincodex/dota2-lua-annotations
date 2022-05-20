@@ -8,7 +8,7 @@ CDOTA_Modifier_Lua_Horizontal_Motion = {}
 function CDOTA_Modifier_Lua_Horizontal_Motion:ApplyHorizontalMotionController() end
 
 ---Get the priority
----@return modifierpriority
+---@return number
 function CDOTA_Modifier_Lua_Horizontal_Motion:GetPriority() end
 
 ---Called when the motion gets interrupted.
@@ -16,7 +16,7 @@ function CDOTA_Modifier_Lua_Horizontal_Motion:GetPriority() end
 function CDOTA_Modifier_Lua_Horizontal_Motion:OnHorizontalMotionInterrupted() end
 
 ---Set the priority
----@param nMotionPriority modifierpriority
+---@param nMotionPriority number
 ---@return nil
 function CDOTA_Modifier_Lua_Horizontal_Motion:SetPriority(nMotionPriority) end
 

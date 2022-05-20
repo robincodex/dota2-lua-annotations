@@ -4,13 +4,13 @@
 CDOTA_MapTree = {}
 
 ---Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)
----@param nTreeNumberKnownTo DOTATeam_t
+---@param nTreeNumberKnownTo number
 ---@return nil
 function CDOTA_MapTree:CutDown(nTreeNumberKnownTo) end
 
 ---Cuts down this tree. Parameters: float flRegrowAfter (-1 = never regrow), int nTeamNumberKnownTo (-1 = invalid team)
 ---@param flRegrowAfter number
----@param nTeamNumberKnownTo DOTATeam_t
+---@param nTeamNumberKnownTo number
 ---@return nil
 function CDOTA_MapTree:CutDownRegrowAfter(flRegrowAfter, nTeamNumberKnownTo) end
 

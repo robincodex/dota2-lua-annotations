@@ -44,7 +44,7 @@ function CDOTABaseAbility:GetAOERadius() end
 function CDOTABaseAbility:GetAbilityDamage() end
 
 ---
----@return DAMAGE_TYPES
+---@return number
 function CDOTABaseAbility:GetAbilityDamageType() end
 
 ---
@@ -60,15 +60,15 @@ function CDOTABaseAbility:GetAbilityKeyValues() end
 function CDOTABaseAbility:GetAbilityName() end
 
 ---
----@return DOTA_UNIT_TARGET_FLAGS
+---@return number
 function CDOTABaseAbility:GetAbilityTargetFlags() end
 
 ---
----@return DOTA_UNIT_TARGET_TEAM
+---@return number
 function CDOTABaseAbility:GetAbilityTargetTeam() end
 
 ---
----@return DOTA_UNIT_TARGET_TYPE
+---@return number
 function CDOTABaseAbility:GetAbilityTargetType() end
 
 ---

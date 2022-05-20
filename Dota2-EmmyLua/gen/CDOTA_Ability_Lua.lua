@@ -4,17 +4,17 @@
 CDOTA_Ability_Lua = {}
 
 ---Determine whether an issued command with no target is valid.
----@return UnitFilterResult
+---@return number
 function CDOTA_Ability_Lua:CastFilterResult() end
 
 ---(Vector vLocation) Determine whether an issued command on a location is valid.
 ---@param vLocation Vector
----@return UnitFilterResult
+---@return number
 function CDOTA_Ability_Lua:CastFilterResultLocation(vLocation) end
 
 ---(HSCRIPT hTarget) Determine whether an issued command on a target is valid.
 ---@param hTarget CDOTA_BaseNPC
----@return UnitFilterResult
+---@return number
 function CDOTA_Ability_Lua:CastFilterResultTarget(hTarget) end
 
 ---Controls the size of the AOE casting cursor.
@@ -34,7 +34,7 @@ function CDOTA_Ability_Lua:GetAssociatedSecondaryAbilities() end
 function CDOTA_Ability_Lua:GetBehavior() end
 
 ---Return casting animation of this ability.
----@return GameActivity_t
+---@return number
 function CDOTA_Ability_Lua:GetCastAnimation() end
 
 ---Return cast point of this ability.
@@ -54,7 +54,7 @@ function CDOTA_Ability_Lua:GetCastRange(vLocation, hTarget) end
 function CDOTA_Ability_Lua:GetCastRangeBonus(hTarget, iPseudoCastRange) end
 
 ---Return channel animation of this ability.
----@return GameActivity_t
+---@return number
 function CDOTA_Ability_Lua:GetChannelAnimation() end
 
 ---Return the channel time of this ability.

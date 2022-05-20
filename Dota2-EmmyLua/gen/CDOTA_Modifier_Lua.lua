@@ -16,7 +16,7 @@ function CDOTA_Modifier_Lua:CanParentBeAutoAttacked() end
 function CDOTA_Modifier_Lua:DestroyOnExpire() end
 
 ---Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t
----@return DOTAModifierAttribute_t
+---@return number
 function CDOTA_Modifier_Lua:GetAttributes() end
 
 ---Returns aura stickiness
@@ -33,15 +33,15 @@ function CDOTA_Modifier_Lua:GetAuraEntityReject(hEntity) end
 function CDOTA_Modifier_Lua:GetAuraRadius() end
 
 ---Return the unit flags this aura respects when placing buffs.
----@return DOTA_UNIT_TARGET_FLAGS
+---@return number
 function CDOTA_Modifier_Lua:GetAuraSearchFlags() end
 
 ---Return the teams this aura applies its buff to.
----@return DOTA_UNIT_TARGET_TEAM
+---@return number
 function CDOTA_Modifier_Lua:GetAuraSearchTeam() end
 
 ---Return the unit classifications this aura applies its buff to.
----@return DOTA_UNIT_TARGET_TYPE
+---@return number
 function CDOTA_Modifier_Lua:GetAuraSearchType() end
 
 ---A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150
@@ -49,7 +49,7 @@ function CDOTA_Modifier_Lua:GetAuraSearchType() end
 function CDOTA_Modifier_Lua:GetCritDamage() end
 
 ---Return the attach type of the particle system from GetEffectName.
----@return ParticleAttachment_t
+---@return number
 function CDOTA_Modifier_Lua:GetEffectAttachType() end
 
 ---Return the name of the particle system that is created while this modifier is active.
@@ -65,7 +65,7 @@ function CDOTA_Modifier_Lua:GetHeroEffectName() end
 function CDOTA_Modifier_Lua:GetModifierAura() end
 
 ---Return the priority order this modifier will be applied over others.
----@return modifierpriority
+---@return number
 function CDOTA_Modifier_Lua:GetPriority() end
 
 ---Return the name of the status effect particle system that is created while this modifier is active.
@@ -77,7 +77,7 @@ function CDOTA_Modifier_Lua:GetStatusEffectName() end
 function CDOTA_Modifier_Lua:GetTexture() end
 
 ---Relationship of this hero effect with those from other buffs (higher is more likely to be shown).
----@return modifierpriority
+---@return number
 function CDOTA_Modifier_Lua:HeroEffectPriority() end
 
 ---True/false if this modifier is an aura.
@@ -153,7 +153,7 @@ function CDOTA_Modifier_Lua:SetHasCustomTransmitterData(bHasCustomData) end
 function CDOTA_Modifier_Lua:ShouldUseOverheadOffset() end
 
 ---Relationship of this status effect with those from other buffs (higher is more likely to be shown).
----@return modifierpriority
+---@return number
 function CDOTA_Modifier_Lua:StatusEffectPriority() end
 
 ---@return table

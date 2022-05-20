@@ -107,7 +107,7 @@ function CDOTABaseGameMode:GetAnnouncerDisabled() end
 function CDOTABaseGameMode:GetCameraDistanceOverride() end
 
 ---Get current derived stat value constant.
----@param nDerivedStatType AttributeDerivedStats
+---@param nDerivedStatType number
 ---@param hHero CDOTA_BaseNPC_Hero
 ---@return number
 function CDOTABaseGameMode:GetCustomAttributeDerivedStatValue(nDerivedStatType, hHero) end
@@ -352,7 +352,7 @@ function CDOTABaseGameMode:SetCameraZRange(flMinZ, flMaxZ) end
 function CDOTABaseGameMode:SetCanSellAnywhere(bAllow) end
 
 ---Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue.
----@param nStatType AttributeDerivedStats
+---@param nStatType number
 ---@param flNewValue number
 ---@return nil
 function CDOTABaseGameMode:SetCustomAttributeDerivedStatValue(nStatType, flNewValue) end
@@ -515,7 +515,7 @@ function CDOTABaseGameMode:SetGiveFreeTPOnDeath(bGive) end
 function CDOTABaseGameMode:SetGoldSoundDisabled(bDisabled) end
 
 ---Set the HUD element visibility.
----@param iHUDElement DOTAHUDVisibility_t
+---@param iHUDElement number
 ---@param bVisible boolean
 ---@return nil
 function CDOTABaseGameMode:SetHUDVisible(iHUDElement, bVisible) end
@@ -651,7 +651,7 @@ function CDOTABaseGameMode:SetRemoveIllusionsOnDeath(bRemove) end
 function CDOTABaseGameMode:SetRespawnTimeScale(flValue) end
 
 ---Set if a given type of rune is enabled.
----@param nRune DOTA_RUNES
+---@param nRune number
 ---@param bEnabled boolean
 ---@return nil
 function CDOTABaseGameMode:SetRuneEnabled(nRune, bEnabled) end
@@ -688,7 +688,7 @@ function CDOTABaseGameMode:SetStickyItemDisabled(bDisabled) end
 function CDOTABaseGameMode:SetTPScrollSlotItemOverride(pItemName) end
 
 ---Set the team values on the top game bar.
----@param iTeam DOTATeam_t
+---@param iTeam number
 ---@param nValue number
 ---@return nil
 function CDOTABaseGameMode:SetTopBarTeamValue(iTeam, nValue) end

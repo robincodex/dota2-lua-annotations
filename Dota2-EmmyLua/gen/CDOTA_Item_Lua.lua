@@ -9,17 +9,17 @@ CDOTA_Item_Lua = {}
 function CDOTA_Item_Lua:CanUnitPickUp(hUnit) end
 
 ---Determine whether an issued command with no target is valid.
----@return UnitFilterResult
+---@return number
 function CDOTA_Item_Lua:CastFilterResult() end
 
 ---(Vector vLocation) Determine whether an issued command on a location is valid.
 ---@param vLocation Vector
----@return UnitFilterResult
+---@return number
 function CDOTA_Item_Lua:CastFilterResultLocation(vLocation) end
 
 ---(HSCRIPT hTarget) Determine whether an issued command on a target is valid.
 ---@param hTarget CDOTA_BaseNPC
----@return UnitFilterResult
+---@return number
 function CDOTA_Item_Lua:CastFilterResultTarget(hTarget) end
 
 ---Returns abilities that are stolen simultaneously, or otherwise related in functionality.

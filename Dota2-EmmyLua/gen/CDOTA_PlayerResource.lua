@@ -292,12 +292,12 @@ function CDOTA_PlayerResource:GetNetWorth(iPlayerID) end
 
 ---
 ---@param nCourierIndex number
----@param nTeamNumber DOTATeam_t
+---@param nTeamNumber number
 ---@return table
 function CDOTA_PlayerResource:GetNthCourierForTeam(nCourierIndex, nTeamNumber) end
 
 ---
----@param iTeamNumber DOTATeam_t
+---@param iTeamNumber number
 ---@param iNthPlayer number
 ---@return number
 function CDOTA_PlayerResource:GetNthPlayerIDOnTeam(iTeamNumber, iNthPlayer) end
@@ -312,7 +312,7 @@ function CDOTA_PlayerResource:GetNumConnectedHumanPlayers() end
 function CDOTA_PlayerResource:GetNumConsumablesPurchased(iPlayerID) end
 
 ---
----@param nTeamNumber DOTATeam_t
+---@param nTeamNumber number
 ---@return number
 function CDOTA_PlayerResource:GetNumCouriersForTeam(nTeamNumber) end
 
@@ -336,7 +336,7 @@ function CDOTA_PlayerResource:GetPlayer(iPlayerID) end
 function CDOTA_PlayerResource:GetPlayerCount() end
 
 ---
----@param iTeam DOTATeam_t
+---@param iTeam number
 ---@return number
 function CDOTA_PlayerResource:GetPlayerCountForTeam(iTeam) end
 
@@ -417,11 +417,11 @@ function CDOTA_PlayerResource:GetStuns(iPlayerID) end
 
 ---
 ---@param iPlayerID PlayerID
----@return DOTATeam_t
+---@return number
 function CDOTA_PlayerResource:GetTeam(iPlayerID) end
 
 ---
----@param iTeam DOTATeam_t
+---@param iTeam number
 ---@return number
 function CDOTA_PlayerResource:GetTeamKills(iTeam) end
 
@@ -575,7 +575,7 @@ function CDOTA_PlayerResource:IncrementStreak(iPlayerID) end
 ---
 ---@param iPlayerID PlayerID
 ---@param iXP number
----@param nReason EDOTA_ModifyXP_Reason
+---@param nReason number
 ---@return nil
 function CDOTA_PlayerResource:IncrementTotalEarnedXP(iPlayerID, iXP, nReason) end
 
@@ -631,7 +631,7 @@ function CDOTA_PlayerResource:IsValidTeamPlayerID(iPlayerID) end
 ---@param iPlayerID PlayerID
 ---@param iGoldChange number
 ---@param bReliable boolean
----@param nReason EDOTA_ModifyGold_Reason
+---@param nReason number
 ---@return number
 function CDOTA_PlayerResource:ModifyGold(iPlayerID, iGoldChange, bReliable, nReason) end
 
@@ -747,7 +747,7 @@ function CDOTA_PlayerResource:SetCustomPlayerColor(iPlayerID, r, g, b) end
 
 ---Set custom team assignment for this player.
 ---@param iPlayerID PlayerID
----@param iTeamAssignment DOTATeam_t
+---@param iTeamAssignment number
 ---@return nil
 function CDOTA_PlayerResource:SetCustomTeamAssignment(iPlayerID, iTeamAssignment) end
 
@@ -786,13 +786,13 @@ function CDOTA_PlayerResource:SetUnitShareMaskForPlayer(nPlayerID, nOtherPlayerI
 ---
 ---@param iPlayerID PlayerID
 ---@param iCost number
----@param iReason EDOTA_ModifyGold_Reason
+---@param iReason number
 ---@return nil
 function CDOTA_PlayerResource:SpendGold(iPlayerID, iCost, iReason) end
 
 ---
 ---@param iPlayerID PlayerID
----@param iTeamNumber DOTATeam_t
+---@param iTeamNumber number
 ---@param desiredSlot number
 ---@return nil
 function CDOTA_PlayerResource:UpdateTeamSlot(iPlayerID, iTeamNumber, desiredSlot) end

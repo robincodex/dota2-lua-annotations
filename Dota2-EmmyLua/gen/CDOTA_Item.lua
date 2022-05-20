@@ -48,7 +48,7 @@ function CDOTA_Item:GetPurchaser() end
 function CDOTA_Item:GetSecondaryCharges() end
 
 ---
----@return EShareAbility
+---@return number
 function CDOTA_Item:GetShareability() end
 
 ---Get the number of valueless charges this item currently has.
@@ -222,7 +222,7 @@ function CDOTA_Item:SetSecondaryCharges(iCharges) end
 function CDOTA_Item:SetSellable(bSellable) end
 
 ---
----@param iShareability EShareAbility
+---@param iShareability number
 ---@return nil
 function CDOTA_Item:SetShareability(iShareability) end
 

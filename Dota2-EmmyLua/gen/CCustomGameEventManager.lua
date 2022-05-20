@@ -26,7 +26,7 @@ function CCustomGameEventManager:Send_ServerToAllClients(eventName, eventData) e
 function CCustomGameEventManager:Send_ServerToPlayer(player, eventName, eventData) end
 
 ---( int TeamNumber, string EventName, table EventData )
----@param team DOTATeam_t
+---@param team number
 ---@param eventName string
 ---@param eventData table
 ---@return nil
