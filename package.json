@@ -1,16 +1,42 @@
 {
     "name": "dota2-emmylua",
+    "displayName": "Dota2 EmmyLua",
+    "description": "Dota2 lua api definitions and annotations for lua-language-server",
     "version": "1.0.0",
-    "main": "index.js",
     "license": "MIT",
-    "scripts": {
-        "start": "ts-node dump.ts"
+    "publisher": "robincode",
+    "icon": "logo.png",
+    "keywords": [
+        "Lua",
+        "Dota2"
+    ],
+    "categories": [
+        "Linters",
+        "Programming Languages"
+    ],
+    "extensionDependencies": [
+        "sumneko.lua"
+    ],
+    "engines": {
+        "vscode": "^1.75.0"
     },
-    "dependencies": {
-        "@types/node": "^17.0.35",
-        "axios": "^0.27.2",
-        "octokit": "^1.7.1",
-        "ts-node": "^10.7.0",
-        "typescript": "^4.6.4"
+    "activationEvents": [
+        "onLanguage:lua"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {},
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "dump": "ts-node dump.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^18.14.6",
+        "@types/vscode": "^1.51.0",
+        "axios": "^1.3.4",
+        "octokit": "^2.0.14",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
     }
 }
