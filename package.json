@@ -2,7 +2,7 @@
     "name": "dota2-lua-annotations",
     "displayName": "Dota2 Lua Annotations",
     "description": "Dota2 lua api annotations for lua-language-server",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "publisher": "robincode",
     "icon": "logo.png",
@@ -10,6 +10,9 @@
         "Lua",
         "Dota2"
     ],
+    "repository": {
+        "url": "https://github.com/robincodex/dota2-lua-annotations"
+    },
     "categories": [
         "Linters",
         "Programming Languages"

@@ -64,3 +64,10 @@ export function toLuaParams(params: FunctionParameter[]) {
 export function getArgNames(params: FunctionParameter[]) {
     return params.map((v) => _resolveParamName(v.name));
 }
+
+export function isMetaMethod(name: string): boolean {
+    if (!name.startsWith('__')) {
+        return false;
+    }
+    return name !== '__eq' && name !== '__tostring';
+}

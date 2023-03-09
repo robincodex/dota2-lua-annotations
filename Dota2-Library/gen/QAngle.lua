@@ -6,13 +6,8 @@
 ---@field y float Yaw angle
 ---@field z float Roll angle
 ---@operator call:QAngle
+---@operator add:QAngle
 _G.QAngle = {}
-
---- Overloaded +. Adds angles together.  
---- Env: `server` or `client`
----@param b QAngle
----@return QAngle
-function QAngle:__add(b) return QAngle() end
 
 --- Overloaded ==. Tests for Equality.  
 --- Env: `server` or `client`

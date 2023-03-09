@@ -13,6 +13,7 @@ import {
     availableAnnotation,
     getArgNames,
     isEnum,
+    isMetaMethod,
     isTypeObject,
     toLuaMultipleTypes,
     toLuaParams,
@@ -59,10 +60,23 @@ export async function dumpAPI(rootPath: string) {
                     code += '---@operator call:' + toLuaReturn(api.call.returns) + '\n';
                 }
 
+                // lua meta methods
+                const metaFuncs = api.members.filter(
+                    (v) => v.kind === 'function' && isMetaMethod(v.name)
+                ) as ClassMethod[];
+                for (const func of metaFuncs) {
+                    code +=
+                        `---@operator ${func.name.replace('__', '')}:` +
+                        toLuaReturn(func.returns) +
+                        '\n';
+                }
+
                 code += `_G.${className} = {}\n\n`;
                 fileCache[className] = code;
             }
-            const funcs = api.members.filter((v) => v.kind === 'function') as ClassMethod[];
+            const funcs = api.members.filter(
+                (v) => v.kind === 'function' && !isMetaMethod(v.name)
+            ) as ClassMethod[];
             fileCache[className] += funcs.map((v) => toLuaFunc(v, className)).join('');
         } else {
             throw new Error('not support api');

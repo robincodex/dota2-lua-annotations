@@ -6,19 +6,13 @@
 ---@field y float Y-axis
 ---@field z float Z-axis
 ---@operator call:Vector
+---@operator add:Vector
+---@operator div:Vector
+---@operator len:float
+---@operator mul:Vector
+---@operator sub:Vector
+---@operator unm:Vector
 _G.Vector = {}
-
---- Overloaded +. Adds vectors together.  
---- Env: `server` or `client`
----@param b Vector
----@return Vector
-function Vector:__add(b) return Vector() end
-
---- Overloaded /. Divides vectors.  
---- Env: `server` or `client`
----@param b Vector
----@return Vector
-function Vector:__div(b) return Vector() end
 
 --- Overloaded ==. Tests for Equality.  
 --- Env: `server` or `client`
@@ -26,32 +20,10 @@ function Vector:__div(b) return Vector() end
 ---@return bool
 function Vector:__eq(b) return true end
 
---- Overloaded # returns the length of the vector.  
---- Env: `server` or `client`
----@return float
-function Vector:__len() return 0 end
-
---- Overloaded * returns the vectors multiplied together. Can also be used to multiply with scalars.  
---- Env: `server` or `client`
----@param b Vector|float
----@return Vector
-function Vector:__mul(b) return Vector() end
-
---- Overloaded -. Subtracts vectors.  
---- Env: `server` or `client`
----@param b Vector
----@return Vector
-function Vector:__sub(b) return Vector() end
-
 --- Overloaded .. Converts vectors to strings.  
 --- Env: `server` or `client`
 ---@return string
 function Vector:__tostring() return '' end
-
---- Overloaded - operator. Reverses the vector.  
---- Env: `server` or `client`
----@return Vector
-function Vector:__unm() return Vector() end
 
 --- Cross product of two vectors.  
 --- Env: `server` or `client`
