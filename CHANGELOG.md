@@ -13,3 +13,4 @@ Add global variables:
 -   `CustomUIManager`
 -   `CustomNetTables`
 -   `CustomGameEventManager`
+-   `ParticleManager`

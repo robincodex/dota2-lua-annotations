@@ -37,3 +37,6 @@ _G.CustomNetTables = {}
 
 ---@type CCustomGameEventManager
 _G.CustomGameEventManager = {}
+
+---@type CScriptParticleManager
+_G.ParticleManager = {}
