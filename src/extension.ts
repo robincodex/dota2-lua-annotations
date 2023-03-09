@@ -1,11 +1,11 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-    setExternalLibrary(context, 'Dota2-EmmyLua', true);
+    setExternalLibrary(context, 'Dota2-Library', true);
 }
 
 export function deactivate(context: vscode.ExtensionContext) {
-    setExternalLibrary(context, 'Dota2-EmmyLua', false);
+    setExternalLibrary(context, 'Dota2-Library', false);
 }
 
 function setExternalLibrary(context: vscode.ExtensionContext, folder: string, enable: boolean) {
@@ -37,4 +37,5 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
         }
         config.update('workspace.library', library, true);
     }
+    config.update('runtime.version', 'LuaJIT', true);
 }

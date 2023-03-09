@@ -1,7 +1,13 @@
 import axios from 'axios';
 import { existsSync } from 'fs';
-import { mkdir, writeFile } from 'fs/promises';
+import { mkdir, rm, writeFile } from 'fs/promises';
 import { Octokit } from 'octokit';
+import { overrideLuaParams } from './dump_override';
+import api from '@moddota/dota-data/files/vscripts/api';
+import { join } from 'path';
+import { dumpAPI } from './dump_api';
+import { dumpEnums } from './dump_enum';
+import { dumpApiTypes } from './dump_api_types';
 
 interface ModDotaLuaAPI {
     extends: string;
@@ -27,8 +33,8 @@ async function fetchLuaServerAPIFromModDota(): Promise<Record<string, ModDotaLua
     const octokit = new Octokit({});
     const res = await octokit.rest.repos.getContent({
         owner: 'ModDota',
-        repo: 'API',
-        path: '_data/lua_server.json',
+        repo: 'dota-data',
+        path: 'files/api.json',
     });
     // @ts-ignore
     const content = Buffer.from(res.data.content, 'base64').toString('utf8');
@@ -72,7 +78,11 @@ async function fetchLuaServerEnumsFromModDota(): Promise<Record<string, ModDotaL
 
 const enumTypes = new Set<string>();
 
-function GetLuaType(returnString: string): string {
+function GetLuaType(funcName: string, name: string, returnString: string): string {
+    const override = overrideLuaParams[funcName];
+    if (override && override[name]) {
+        return override[name];
+    }
     switch (returnString) {
         case 'bool':
             return 'boolean';
@@ -81,6 +91,10 @@ function GetLuaType(returnString: string): string {
         case 'uint64':
         case 'uint':
         case 'double':
+        case 'PlayerID':
+        case 'ParticleID':
+        case 'ProjectileID':
+        case 'ProjectileID!':
             return 'number';
         case '<unknown>':
             return 'any';
@@ -116,17 +130,19 @@ function GetFuncAnnotation(
         .map((v) => `---${v}`)
         .join('  \n');
     text += '\n';
+    const _funcName = `${className ? className + ':' : ''}${funcName}`;
 
     const luaArgs: string[] = [];
     for (let i = 0; i < funcInfo.args.length; i++) {
-        const arg = funcInfo.args[i];
+        let arg = funcInfo.args[i];
         const argName = funcInfo.arg_names ? funcInfo.arg_names[i] : '';
-        luaArgs.push(argName ? argName : arg + (i + 1));
-        text += `---@param ${luaArgs[i]} ${GetLuaType(arg)}\n`;
+        const name = argName ? argName : arg.replace('<', '').replace('>', '') + (i + 1);
+        luaArgs.push(name);
+        text += `---@param ${luaArgs[i]} ${GetLuaType(_funcName, name, arg)}\n`;
     }
 
-    text += `---@return ${GetLuaType(funcInfo.return)}\n`;
-    text += `function ${className ? className + ':' : ''}${funcName}(${luaArgs.join(', ')}) end\n`;
+    text += `---@return ${GetLuaType(_funcName, '@return', funcInfo.return)}\n`;
+    text += `function ${_funcName}(${luaArgs.join(', ')}) end\n`;
     text += '\n';
     return text;
 }
@@ -172,28 +188,12 @@ ${className} = {}
 }
 
 async function StartDump() {
-    if (!existsSync('Dota2-EmmyLua/gen')) {
-        await mkdir('Dota2-EmmyLua/gen');
-    }
-    const enums = await fetchLuaServerEnumsFromModDota();
-    {
-        Object.keys(enums).forEach((v) => enumTypes.add(v));
-        let text = '';
-        for (const list of Object.values(enums)) {
-            for (const v of list) {
-                if (v.description) {
-                    text += `---` + v.description + '\n';
-                }
-                text += `${v.key} = ${v.value}\n`;
-            }
-        }
-        await writeFile('Dota2-EmmyLua/gen/enums.lua', text, 'utf8');
-    }
-
-    const luaAPI = await fetchLuaServerAPIFromModDota();
-    for (const [className, api] of Object.entries(luaAPI)) {
-        await GenerateLuaFile(className, api);
-    }
+    const root = join(__dirname, '../Dota2-Library/gen');
+    await rm(root, { recursive: true, force: true });
+    await mkdir(root, { recursive: true });
+    await dumpApiTypes(root);
+    await dumpEnums(root);
+    await dumpAPI(root);
 }
 
 StartDump();
