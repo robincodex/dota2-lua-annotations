@@ -1,0 +1,12 @@
+
+---@class AbilityContext
+---@field caster CDOTA_BaseNPC
+---@field caster_entindex EntityIndex
+---@field target CDOTA_BaseNPC
+---@field target_entindex EntityIndex
+---@field unit CDOTA_BaseNPC
+---@field victim CDOTA_BaseNPC
+---@field attacker CDOTA_BaseNPC
+---@field target_points Vector[]
+---@field ability CDOTABaseAbility
+---@field damage number

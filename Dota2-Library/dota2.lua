@@ -4,6 +4,9 @@ _G.Quaternion = {}
 ---@type CDOTA_BaseNPC
 _G.thisEntity = {}
 
+---@param def table
+---@param statics table|nil
+---@param base table|nil
 ---@return table
 function _G.class(def, statics, base) return {} end
 

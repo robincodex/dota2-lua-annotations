@@ -14,3 +14,7 @@ Add global variables:
 -   `CustomNetTables`
 -   `CustomGameEventManager`
 -   `ParticleManager`
+
+## v1.0.3
+
+Add custom type `AbilityContext` for ability data driven.
