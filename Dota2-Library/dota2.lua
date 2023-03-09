@@ -22,3 +22,18 @@ function Dynamic_Wrap(ctx, funcName)
     return function()
     end
 end
+
+---@type CDOTAGameRules
+_G.GameRules = {}
+
+---@type CDOTA_PlayerResource
+_G.PlayerResource = {}
+
+---@type CDOTA_CustomUIManager
+_G.CustomUIManager = {}
+
+---@type CCustomNetTableManager
+_G.CustomNetTables = {}
+
+---@type CCustomGameEventManager
+_G.CustomGameEventManager = {}
