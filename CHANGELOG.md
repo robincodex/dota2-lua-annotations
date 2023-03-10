@@ -29,3 +29,7 @@ Add custom type `AbilityContext` for ability data driven.
 ## v1.0.5
 
 Add `Entities`
+
+## v1.0.6
+
+Update API

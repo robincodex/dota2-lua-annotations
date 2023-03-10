@@ -10,13 +10,22 @@ _G.thisEntity = {}
 ---@return table
 function _G.class(def, statics, base) return {} end
 
-ACT_DOTA_ATTACK_STATUE = 0
-ACT_DOTA_ATTACK_TAUNT = 0
-ACT_DOTA_TAUNT_STATUE = 0
-ACT_DOTA_STUN_STATUE = 0
-ACT_DOTA_IDLE_STATUE = 0
-ACT_DOTA_LOADOUT_STATUE = 0
-ACT_DOTA_RUN_STATUE = 0
+---@param instanceObj any
+---@param classObj any
+---@return boolean|nil
+function instanceof(instanceObj, classObj) end
+
+---@param instanceObj any
+---@return table|nil
+function getclass(instanceObj) return {} end
+
+---@param instanceObj any
+---@return table|nil
+function getbase(instanceObj) return {} end
+
+---@param classObj any
+---@return boolean
+function isclass(classObj) return true end
 
 ---@param ctx table
 ---@param funcName string
@@ -26,23 +35,16 @@ function Dynamic_Wrap(ctx, funcName)
     end
 end
 
----@type CDOTAGameRules
-_G.GameRules = {}
+---@param debugInstance any
+---@param prefix any
+---@param isPublicScriptScope any
+function DeepPrintTable( debugInstance, prefix, isPublicScriptScope ) end
 
----@type CDOTA_PlayerResource
-_G.PlayerResource = {}
+--- Print out a class/array/instance/table to the console
+---@param debugInstance any
+---@param prefix any
+function DeepPrint(debugInstance, prefix) end
 
----@type CDOTA_CustomUIManager
-_G.CustomUIManager = {}
-
----@type CCustomNetTableManager
-_G.CustomNetTables = {}
-
----@type CCustomGameEventManager
-_G.CustomGameEventManager = {}
-
----@type CScriptParticleManager
-_G.ParticleManager = {}
-
----@type CEntities
-_G.Entities = {}
+---@param str string
+---@return string
+function UniqueString(str) return "" end
