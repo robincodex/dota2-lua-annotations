@@ -24,3 +24,4 @@ Add custom type `AbilityContext` for ability data driven.
 -   Add `lowercase-global` to `Lua.diagnostics.disable`
 -   Force `true` to `Lua.workspace.checkThirdParty`
 -   Add snippets
+-   Add `vlua`

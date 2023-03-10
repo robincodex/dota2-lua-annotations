@@ -8,5 +8,6 @@
 ---@field victim CDOTA_BaseNPC
 ---@field attacker CDOTA_BaseNPC
 ---@field target_points Vector[]
+---@field target_entities CDOTA_BaseNPC[]
 ---@field ability CDOTABaseAbility
 ---@field damage number
