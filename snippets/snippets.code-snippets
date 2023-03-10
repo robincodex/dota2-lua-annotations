@@ -1,0 +1,22 @@
+{
+    "OnCastAbility": {
+        "prefix": ["oncast"],
+        "body": "--- Cast ${1:Ability}\n---@param ctx AbilityContext\nfunction OnCast${1:Ability}(ctx)\n    local ${2:caster} = ctx.${2:caster};\n    $0\nend"
+    },
+    "OnCastAbilityTarget": {
+        "prefix": ["oncast_target"],
+        "body": "--- Cast ${1:Ability}\n---@param ctx AbilityContext\nfunction OnCast${1:Ability}(ctx)\n    local ${2:caster} = ctx.${2:caster};\n    local ${3:target} = ctx.${3:target};\n    $0\nend"
+    },
+    "Define Modifier Lua": {
+        "prefix": ["classmodifier", "classbuf"],
+        "body": "---@class ${1:modifier_name} : CDOTA_Modifier_Lua\n${1:modifier_name} = class({})"
+    },
+    "Define Ability Lua": {
+        "prefix": ["classability"],
+        "body": "---@class ${1:ability_name} : CDOTA_Ability_Lua\n${1:ability_name} = class({})"
+    },
+    "Define Item Lua": {
+        "prefix": ["classitem"],
+        "body": "---@class ${1:item_name} : CDOTA_Item_Lua\n${1:item_name} = class({})"
+    }
+}

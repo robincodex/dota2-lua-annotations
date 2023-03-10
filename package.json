@@ -27,7 +27,14 @@
         "onLanguage:lua"
     ],
     "main": "./out/extension.js",
-    "contributes": {},
+    "contributes": {
+        "snippets": [
+            {
+                "language": "lua",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    },
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",

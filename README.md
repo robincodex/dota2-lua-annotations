@@ -22,6 +22,14 @@ function OnCastAbility(ctx)
 end
 ```
 
+## Snippets
+
+-   oncast
+-   oncast_target
+-   classmodifier or classbuf
+-   classability
+-   classitem
+
 # Developer
 
 ```
