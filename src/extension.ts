@@ -38,4 +38,16 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
         config.update('workspace.library', library, true);
     }
     config.update('runtime.version', 'LuaJIT', true);
+
+    const disabledDiagnostics: string[] | undefined = config.get('diagnostics.disable');
+    if (disabledDiagnostics) {
+        let changed = false;
+        if (!disabledDiagnostics.includes('lowercase-global')) {
+            disabledDiagnostics.push('lowercase-global');
+            changed = true;
+        }
+        config.update('diagnostics.disable', disabledDiagnostics, true);
+    } else {
+        config.update('diagnostics.disable', ['lowercase-global'], true);
+    }
 }
