@@ -37,8 +37,14 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
         }
         config.update('workspace.library', library, true);
     }
+
+    // force version
     config.update('runtime.version', 'LuaJIT', true);
 
+    // Lua.workspace.checkThirdParty
+    config.update('workspace.checkThirdParty', false, true);
+
+    // Add diagnostics.disable
     const disabledDiagnostics: string[] | undefined = config.get('diagnostics.disable');
     if (disabledDiagnostics) {
         let changed = false;

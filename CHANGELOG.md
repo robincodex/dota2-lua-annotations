@@ -18,3 +18,8 @@ Add global variables:
 ## v1.0.3
 
 Add custom type `AbilityContext` for ability data driven.
+
+## v1.0.4
+
+-   Add `lowercase-global` to `Lua.diagnostics.disable`
+-   Force `true` to `Lua.workspace.checkThirdParty`
