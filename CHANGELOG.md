@@ -25,3 +25,7 @@ Add custom type `AbilityContext` for ability data driven.
 -   Force `true` to `Lua.workspace.checkThirdParty`
 -   Add snippets
 -   Add `vlua`
+
+## v1.0.5
+
+Add `Entities`

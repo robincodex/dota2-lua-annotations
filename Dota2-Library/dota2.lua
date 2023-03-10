@@ -43,3 +43,6 @@ _G.CustomGameEventManager = {}
 
 ---@type CScriptParticleManager
 _G.ParticleManager = {}
+
+---@type CEntities
+_G.Entities = {}
