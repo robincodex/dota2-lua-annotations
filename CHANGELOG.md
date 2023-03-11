@@ -33,3 +33,8 @@ Add `Entities`
 ## v1.0.6
 
 Update API
+
+## v1.0.7
+
+-   Update default `diagnostics.disable`
+-   Update snippets

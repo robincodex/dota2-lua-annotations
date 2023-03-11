@@ -1,22 +1,22 @@
 {
     "OnCastAbility": {
         "prefix": ["oncast"],
-        "body": "--- Cast ${1:Ability}\n---@param ctx AbilityContext\nfunction OnCast${1:Ability}(ctx)\n    local ${2:caster} = ctx.${2:caster};\n    $0\nend"
+        "body": "--- ${2:Cast Ability}\n---@param ctx AbilityContext\nfunction ${1:OnCastAbility}(ctx)\n    local ${3:caster} = ctx.${3:caster};\n    $0\nend"
     },
     "OnCastAbilityTarget": {
         "prefix": ["oncast_target"],
-        "body": "--- Cast ${1:Ability}\n---@param ctx AbilityContext\nfunction OnCast${1:Ability}(ctx)\n    local ${2:caster} = ctx.${2:caster};\n    local ${3:target} = ctx.${3:target};\n    $0\nend"
+        "body": "--- ${2:Cast Ability}\n---@param ctx AbilityContext\nfunction ${1:OnCastAbility}(ctx)\n    local ${3:caster} = ctx.${3:caster};\n    local ${4:target} = ctx.${4:target};\n    $0\nend"
     },
     "Define Modifier Lua": {
         "prefix": ["classmodifier", "classbuf"],
-        "body": "---@class ${1:modifier_name} : CDOTA_Modifier_Lua\n${1:modifier_name} = class({})"
+        "body": "---@class ${1:modifier_name} : CDOTA_Modifier_Lua\nlocal public = class({})\ngetfenv().${1:modifier_name} = public\n\nfunction public:IsDebuff()\n    return ${2:false}\nend\n\nfunction public:IsHidden()\n    return ${3:false}\nend"
     },
     "Define Ability Lua": {
         "prefix": ["classability"],
-        "body": "---@class ${1:ability_name} : CDOTA_Ability_Lua\n${1:ability_name} = class({})"
+        "body": "---@class ${1:ability_name} : CDOTA_Ability_Lua\nlocal public = class({})\ngetfenv().${1:ability_name} = public\n\nfunction public:OnSpellStart()\n    $0\nend"
     },
     "Define Item Lua": {
         "prefix": ["classitem"],
-        "body": "---@class ${1:item_name} : CDOTA_Item_Lua\n${1:item_name} = class({})"
+        "body": "---@class ${1:item_name} : CDOTA_Item_Lua\nlocal public = class({})\ngetfenv().${1:item_name} = public\n\nfunction public:OnSpellStart()\n    $0\nend"
     }
 }

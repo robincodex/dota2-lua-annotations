@@ -45,15 +45,18 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
     config.update('workspace.checkThirdParty', false, true);
 
     // Add diagnostics.disable
+    const disabledDiagnosticList = ['lowercase-global', 'duplicate-set-field'];
     const disabledDiagnostics: string[] | undefined = config.get('diagnostics.disable');
     if (disabledDiagnostics) {
         let changed = false;
-        if (!disabledDiagnostics.includes('lowercase-global')) {
-            disabledDiagnostics.push('lowercase-global');
-            changed = true;
+        for (const v of disabledDiagnosticList) {
+            if (!disabledDiagnostics.includes(v)) {
+                disabledDiagnostics.push(v);
+                changed = true;
+            }
         }
-        config.update('diagnostics.disable', disabledDiagnostics, true);
+        config.update('diagnostics.disable', [...disabledDiagnostics], true);
     } else {
-        config.update('diagnostics.disable', ['lowercase-global'], true);
+        config.update('diagnostics.disable', [...disabledDiagnosticList], true);
     }
 }
