@@ -652,12 +652,6 @@ function CDOTAGameRules:SetFilterMoreGold(arg1)  end
 ---@return nil
 function CDOTAGameRules:SetFirstBloodActive(active)  end
 
---- Freeze the game time.  
---- Env: only in `server`
----@param frozen bool
----@return nil
-function CDOTAGameRules:SetGameTimeFrozen(frozen)  end
-
 --- Makes the specified team win.  
 --- Env: only in `server`
 ---@param team DOTATeam_t

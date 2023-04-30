@@ -539,11 +539,6 @@ function CDOTA_BaseNPC:GetLastIdleChangeTime() return 0 end
 ---@return int
 function CDOTA_BaseNPC:GetLevel() return 0 end
 
---- Returns current magical armor value.  
---- Env: `server` or `client`
----@return float
-function CDOTA_BaseNPC:GetMagicalArmorValue() return 0 end
-
 --- Returns the player ID of the controlling player.  
 --- Env: only in `server`
 ---@return int
@@ -1162,9 +1157,15 @@ function CDOTA_BaseNPC:IsUnableToMiss() return true end
 function CDOTA_BaseNPC:IsUnselectable() return true end
 
 ---   
---- Env: `server` or `client`
+--- Env: only in `client`
 ---@return bool
 function CDOTA_BaseNPC:IsUntargetable() return true end
+
+---   
+--- Env: `server` or `client`
+---@param targettingSource handle
+---@return bool
+function CDOTA_BaseNPC:IsUntargetableFrom(targettingSource) return true end
 
 --- Is this a Ward?  
 --- Env: only in `server`
@@ -1381,12 +1382,6 @@ function CDOTA_BaseNPC:QueueTeamConcept(delay, criteriaTable, completionCallback
 ---@return nil
 function CDOTA_BaseNPC:QueueTeamConceptNoSpectators(delay, criteriaTable, completionCallbackFn, context, callbackInfo)  end
 
---- Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.  
---- Env: only in `server`
----@param amount float
----@return float
-function CDOTA_BaseNPC:ReduceMana(amount) return 0 end
-
 --- Remove an ability from this unit by name.  
 --- Env: only in `server`
 ---@param abilityName string
@@ -1472,10 +1467,24 @@ function CDOTA_BaseNPC:RespawnUnit()  end
 ---@return float
 function CDOTA_BaseNPC:Script_GetAttackRange() return 0 end
 
+--- Returns current magical armor value.  
+--- Env: `server` or `client`
+---@param useExperimentalFormula bool
+---@param inflictor handle
+---@return float
+function CDOTA_BaseNPC:Script_GetMagicalArmorValue(useExperimentalFormula, inflictor) return 0 end
+
 ---   
 --- Env: `server` or `client`
 ---@return bool
 function CDOTA_BaseNPC:Script_IsDeniable() return true end
+
+--- Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.  
+--- Env: only in `server`
+---@param mana float
+---@param ability handle
+---@return float
+function CDOTA_BaseNPC:Script_ReduceMana(mana, ability) return 0 end
 
 --- Sells the passed item in this unit's inventory.  
 --- Env: only in `server`

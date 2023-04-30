@@ -67,11 +67,6 @@ function CDOTATutorial:FinishTutorial()  end
 ---@return nil
 function CDOTATutorial:ForceGameStart()  end
 
---- Is our time frozen?  
---- Env: only in `server`
----@return bool
-function CDOTATutorial:GetTimeFrozen() return true end
-
 --- Is this item currently in the white list.  
 --- Env: only in `server`
 ---@param itemName string
@@ -120,12 +115,6 @@ function CDOTATutorial:SetQuickBuy(itemName)  end
 ---@param open bool
 ---@return nil
 function CDOTATutorial:SetShopOpen(open)  end
-
---- Set if we should freeze time or not.  
---- Env: only in `server`
----@param timeFrozen bool
----@return nil
-function CDOTATutorial:SetTimeFrozen(timeFrozen)  end
 
 --- Set a tutorial convar.  
 --- Env: only in `server`

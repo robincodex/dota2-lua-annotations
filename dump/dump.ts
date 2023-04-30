@@ -23,59 +23,6 @@ interface ModDotaLuaAPI {
     >;
 }
 
-interface ModDotaLuaEnum {
-    key: string;
-    value: number;
-    description: string;
-}
-
-async function fetchLuaServerAPIFromModDota(): Promise<Record<string, ModDotaLuaAPI>> {
-    const octokit = new Octokit({});
-    const res = await octokit.rest.repos.getContent({
-        owner: 'ModDota',
-        repo: 'dota-data',
-        path: 'files/api.json',
-    });
-    // @ts-ignore
-    const content = Buffer.from(res.data.content, 'base64').toString('utf8');
-    const result: Record<string, ModDotaLuaAPI> = JSON.parse(content);
-
-    const res2 = await octokit.rest.repos.getContent({
-        owner: 'ModDota',
-        repo: 'API',
-        path: '_data/override_lua_server.json',
-    });
-    // @ts-ignore
-    const content2 = Buffer.from(res2.data.content, 'base64').toString('utf8');
-    const override: Record<string, ModDotaLuaAPI> = JSON.parse(content2);
-
-    for (const [className, api] of Object.entries(result)) {
-        const overrideAPI = override[className];
-        if (overrideAPI) {
-            for (const funcName in api.functions) {
-                if (overrideAPI.functions[funcName]) {
-                    api.functions[funcName] = overrideAPI.functions[funcName];
-                }
-            }
-        }
-    }
-
-    return result;
-}
-
-async function fetchLuaServerEnumsFromModDota(): Promise<Record<string, ModDotaLuaEnum[]>> {
-    const octokit = new Octokit({});
-    const res = await octokit.rest.repos.getContent({
-        owner: 'ModDota',
-        repo: 'API',
-        path: '_data/lua_server_enums.json',
-    });
-    // @ts-ignore
-    const content = Buffer.from(res.data.content, 'base64').toString('utf8');
-    const result: Record<string, ModDotaLuaEnum[]> = JSON.parse(content);
-    return result;
-}
-
 const enumTypes = new Set<string>();
 
 function GetLuaType(funcName: string, name: string, returnString: string): string {

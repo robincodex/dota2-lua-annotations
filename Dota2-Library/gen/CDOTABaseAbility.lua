@@ -166,6 +166,12 @@ function CDOTABaseAbility:GetCastRange(location, target) return 0 end
 --- Env: only in `server`
 ---@param level int
 ---@return int
+function CDOTABaseAbility:GetChannelledHealthCostPerSecond(level) return 0 end
+
+---   
+--- Env: only in `server`
+---@param level int
+---@return int
 function CDOTABaseAbility:GetChannelledManaCostPerSecond(level) return 0 end
 
 ---   
@@ -246,6 +252,12 @@ function CDOTABaseAbility:GetEffectiveCooldown(level) return 0 end
 --- Env: only in `server`
 ---@param level int
 ---@return int
+function CDOTABaseAbility:GetEffectiveHealthCost(level) return 0 end
+
+---   
+--- Env: only in `server`
+---@param level int
+---@return int
 function CDOTABaseAbility:GetEffectiveManaCost(level) return 0 end
 
 ---   
@@ -259,6 +271,12 @@ function CDOTABaseAbility:GetGoldCost(level) return 0 end
 ---@param level int
 ---@return int
 function CDOTABaseAbility:GetGoldCostForUpgrade(level) return 0 end
+
+---   
+--- Env: only in `server`
+---@param level int
+---@return int
+function CDOTABaseAbility:GetHealthCost(level) return 0 end
 
 ---   
 --- Env: only in `server`
@@ -558,6 +576,11 @@ function CDOTABaseAbility:PayGoldCostForUpgrade()  end
 ---   
 --- Env: only in `server`
 ---@return nil
+function CDOTABaseAbility:PayHealthCost()  end
+
+---   
+--- Env: only in `server`
+---@return nil
 function CDOTABaseAbility:PayManaCost()  end
 
 ---   
@@ -584,6 +607,11 @@ function CDOTABaseAbility:RefreshCharges()  end
 --- Env: only in `server`
 ---@return nil
 function CDOTABaseAbility:RefreshIntrinsicModifier()  end
+
+---   
+--- Env: only in `server`
+---@return nil
+function CDOTABaseAbility:RefundHealthCost()  end
 
 ---   
 --- Env: only in `server`
@@ -719,8 +747,9 @@ function CDOTABaseAbility:UpgradeAbility(supressSpeech)  end
 ---   
 --- Env: only in `server`
 ---@param mana bool
+---@param useHealth bool
 ---@param gold bool
 ---@param cooldown bool
 ---@return nil
-function CDOTABaseAbility:UseResources(mana, gold, cooldown)  end
+function CDOTABaseAbility:UseResources(mana, useHealth, gold, cooldown)  end
 

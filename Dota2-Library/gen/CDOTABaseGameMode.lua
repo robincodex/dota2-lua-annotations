@@ -912,6 +912,12 @@ function CDOTABaseGameMode:SetWaterRuneLastSpawnTime(value)  end
 ---@return nil
 function CDOTABaseGameMode:SetWeatherEffectsDisabled(disable)  end
 
+--- Set xp rune spawn rate.  
+--- Env: only in `server`
+---@param interval float
+---@return nil
+function CDOTABaseGameMode:SetXPRuneSpawnInterval(interval)  end
+
 ---   
 --- Env: only in `server`
 ---@return bool

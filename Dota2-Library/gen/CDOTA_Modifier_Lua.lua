@@ -375,6 +375,11 @@ function CDOTA_Modifier_Lua:GetModifierAvoidDamage(event) return 0 end
 
 ---   
 --- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierAvoidDamageAfterReductions()  end
+
+---   
+--- Env: `server` or `client`
 ---@param event ModifierAttackEvent
 ---@return 0|1
 function CDOTA_Modifier_Lua:GetModifierAvoidSpell(event) return 0 end
@@ -595,8 +600,18 @@ function CDOTA_Modifier_Lua:GetModifierHealAmplify_PercentageTarget()  end
 
 ---   
 --- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierHealthBarPips()  end
+
+---   
+--- Env: `server` or `client`
 ---@return float
 function CDOTA_Modifier_Lua:GetModifierHealthBonus() return 0 end
+
+---   
+--- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierHealthcostReduction_Constant()  end
 
 ---   
 --- Env: `server` or `client`
@@ -714,6 +729,11 @@ function CDOTA_Modifier_Lua:GetModifierMagicalResistanceBonus(event) return 0 en
 --- Env: `server` or `client`
 ---@return nil
 function CDOTA_Modifier_Lua:GetModifierMagicalResistanceBonusIllusions()  end
+
+---   
+--- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierMagicalResistanceBonusUnique()  end
 
 ---   
 --- Env: `server` or `client`
@@ -915,6 +935,16 @@ function CDOTA_Modifier_Lua:GetModifierPercentageGoldRateBoost()  end
 
 ---   
 --- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierPercentageHealthcost()  end
+
+---   
+--- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierPercentageHealthcostStacking()  end
+
+---   
+--- Env: `server` or `client`
 ---@param event ModifierAbilityEvent
 ---@return float
 function CDOTA_Modifier_Lua:GetModifierPercentageManacost(event) return 0 end
@@ -1080,6 +1110,11 @@ function CDOTA_Modifier_Lua:GetModifierProjectileSpeedBonus() return 0 end
 --- Env: `server` or `client`
 ---@return nil
 function CDOTA_Modifier_Lua:GetModifierProjectileSpeedBonusPercentage()  end
+
+---   
+--- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:GetModifierPropertyIncomingDamage_Constant()  end
 
 ---   
 --- Env: `server` or `client`
@@ -1405,6 +1440,11 @@ function CDOTA_Modifier_Lua:OnDeath(event)  end
 
 ---   
 --- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:OnDeathCompleted()  end
+
+---   
+--- Env: `server` or `client`
 ---@param event ModifierUnitEvent
 ---@return nil
 function CDOTA_Modifier_Lua:OnDominated(event)  end
@@ -1497,7 +1537,17 @@ function CDOTA_Modifier_Lua:OnSetLocation(event)  end
 ---   
 --- Env: `server` or `client`
 ---@return nil
+function CDOTA_Modifier_Lua:OnSpellAppliedSuccessfully()  end
+
+---   
+--- Env: `server` or `client`
+---@return nil
 function CDOTA_Modifier_Lua:OnSpellTargetReady()  end
+
+---   
+--- Env: `server` or `client`
+---@return nil
+function CDOTA_Modifier_Lua:OnSpentHealth()  end
 
 ---   
 --- Env: `server` or `client`

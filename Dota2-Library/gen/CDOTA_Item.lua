@@ -164,8 +164,9 @@ function CDOTA_Item:IsStackable() return true end
 ---@param height float
 ---@param duration float
 ---@param endPoint Vector
+---@param teleportOwner handle
 ---@return nil
-function CDOTA_Item:LaunchLoot(autoUse, height, duration, endPoint)  end
+function CDOTA_Item:LaunchLoot(autoUse, height, duration, endPoint, teleportOwner)  end
 
 ---   
 --- Env: only in `server`
