@@ -35,14 +35,14 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
                 library.splice(index, 1);
             }
         }
-        config.update('workspace.library', library, true);
+        config.update('workspace.library', library, vscode.ConfigurationTarget.Global);
     }
 
     // force version
-    config.update('runtime.version', 'LuaJIT', true);
+    config.update('runtime.version', 'LuaJIT', vscode.ConfigurationTarget.Global);
 
     // Lua.workspace.checkThirdParty
-    config.update('workspace.checkThirdParty', false, true);
+    config.update('workspace.checkThirdParty', false, vscode.ConfigurationTarget.Global);
 
     // Add diagnostics.disable
     const disabledDiagnosticList = ['lowercase-global', 'duplicate-set-field'];
@@ -55,8 +55,16 @@ function setExternalLibrary(context: vscode.ExtensionContext, folder: string, en
                 changed = true;
             }
         }
-        config.update('diagnostics.disable', [...disabledDiagnostics], true);
+        config.update(
+            'diagnostics.disable',
+            [...disabledDiagnostics],
+            vscode.ConfigurationTarget.Global
+        );
     } else {
-        config.update('diagnostics.disable', [...disabledDiagnosticList], true);
+        config.update(
+            'diagnostics.disable',
+            [...disabledDiagnosticList],
+            vscode.ConfigurationTarget.Global
+        );
     }
 }
