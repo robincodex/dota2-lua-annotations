@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CCustomNetTableManager
 _G.CCustomNetTableManager = {}
@@ -8,7 +8,7 @@ _G.CCustomNetTableManager = {}
 ---@param tableName string
 ---@param keyName string
 ---@return table
-function CCustomNetTableManager:GetTableValue(tableName, keyName) return {} end
+function CCustomNetTableManager:GetTableValue(tableName, keyName) end
 
 ---   
 --- Env: only in `server`
@@ -16,5 +16,5 @@ function CCustomNetTableManager:GetTableValue(tableName, keyName) return {} end
 ---@param keyName string
 ---@param value handle
 ---@return bool
-function CCustomNetTableManager:SetTableValue(tableName, keyName, value) return true end
+function CCustomNetTableManager:SetTableValue(tableName, keyName, value) end
 

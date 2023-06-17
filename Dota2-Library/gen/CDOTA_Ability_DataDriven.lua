@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_Ability_DataDriven : CDOTABaseAbility
 _G.CDOTA_Ability_DataDriven = {}
@@ -10,7 +10,7 @@ _G.CDOTA_Ability_DataDriven = {}
 ---@param modifierName string
 ---@param modifierTable table|nil
 ---@return CDOTA_Buff
-function CDOTA_Ability_DataDriven:ApplyDataDrivenModifier(caster, target, modifierName, modifierTable) return {} end
+function CDOTA_Ability_DataDriven:ApplyDataDrivenModifier(caster, target, modifierName, modifierTable) end
 
 --- Applies a data driven thinker at the location.  
 --- Env: only in `server`
@@ -19,5 +19,5 @@ function CDOTA_Ability_DataDriven:ApplyDataDrivenModifier(caster, target, modifi
 ---@param modifierName string
 ---@param modifierTable table|nil
 ---@return CDOTA_Buff
-function CDOTA_Ability_DataDriven:ApplyDataDrivenThinker(caster, location, modifierName, modifierTable) return {} end
+function CDOTA_Ability_DataDriven:ApplyDataDrivenThinker(caster, location, modifierName, modifierTable) end
 

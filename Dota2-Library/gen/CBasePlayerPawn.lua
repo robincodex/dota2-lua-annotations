@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CBasePlayerPawn : CBaseCombatCharacter
 _G.CBasePlayerPawn = {}
@@ -6,20 +6,20 @@ _G.CBasePlayerPawn = {}
 --- Returns the controller for this pawn.  
 --- Env: only in `server`
 ---@return handle
-function CBasePlayerPawn:GetController() return {} end
+function CBasePlayerPawn:GetController() end
 
 --- Returns an array of all the equipped weapons.  
 --- Env: only in `server`
 ---@return table
-function CBasePlayerPawn:GetEquippedWeapons() return {} end
+function CBasePlayerPawn:GetEquippedWeapons() end
 
 --- Gets the number of weapons currently equipped.  
 --- Env: only in `server`
 ---@return int
-function CBasePlayerPawn:GetWeaponCount() return 0 end
+function CBasePlayerPawn:GetWeaponCount() end
 
 --- Returns true if the player is in noclip mode.  
 --- Env: only in `server`
 ---@return bool
-function CBasePlayerPawn:IsNoclipping() return true end
+function CBasePlayerPawn:IsNoclipping() end
 

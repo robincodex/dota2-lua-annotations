@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTAVoteSystem
 _G.CDOTAVoteSystem = {}
@@ -7,5 +7,5 @@ _G.CDOTAVoteSystem = {}
 --- Env: only in `server`
 ---@param arg1 handle
 ---@return nil
-function CDOTAVoteSystem:StartVote(arg1)  end
+function CDOTAVoteSystem:StartVote(arg1) end
 

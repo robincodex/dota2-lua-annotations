@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_Item_BagOfGold : CDOTA_Item
 _G.CDOTA_Item_BagOfGold = {}
@@ -7,5 +7,5 @@ _G.CDOTA_Item_BagOfGold = {}
 --- Env: only in `server`
 ---@param time float
 ---@return nil
-function CDOTA_Item_BagOfGold:SetLifeTime(time)  end
+function CDOTA_Item_BagOfGold:SetLifeTime(time) end
 

@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CCustomGameEventManager
 _G.CCustomGameEventManager = {}
@@ -8,14 +8,14 @@ _G.CCustomGameEventManager = {}
 ---@param eventName string
 ---@param listener fun(userId: EntityIndex, event: table): nil
 ---@return CustomGameEventListenerID
-function CCustomGameEventManager:RegisterListener(eventName, listener) return 0 end
+function CCustomGameEventManager:RegisterListener(eventName, listener) end
 
 ---   
 --- Env: only in `server`
 ---@param eventName string
 ---@param eventData table
 ---@return nil
-function CCustomGameEventManager:Send_ServerToAllClients(eventName, eventData)  end
+function CCustomGameEventManager:Send_ServerToAllClients(eventName, eventData) end
 
 ---   
 --- Env: only in `server`
@@ -23,7 +23,7 @@ function CCustomGameEventManager:Send_ServerToAllClients(eventName, eventData)  
 ---@param eventName string
 ---@param eventData table
 ---@return nil
-function CCustomGameEventManager:Send_ServerToPlayer(player, eventName, eventData)  end
+function CCustomGameEventManager:Send_ServerToPlayer(player, eventName, eventData) end
 
 ---   
 --- Env: only in `server`
@@ -31,11 +31,11 @@ function CCustomGameEventManager:Send_ServerToPlayer(player, eventName, eventDat
 ---@param eventName string
 ---@param eventData table
 ---@return nil
-function CCustomGameEventManager:Send_ServerToTeam(team, eventName, eventData)  end
+function CCustomGameEventManager:Send_ServerToTeam(team, eventName, eventData) end
 
 --- Unregister a specific listener.  
 --- Env: only in `server`
 ---@param listenerId CustomGameEventListenerID
 ---@return nil
-function CCustomGameEventManager:UnregisterListener(listenerId)  end
+function CCustomGameEventManager:UnregisterListener(listenerId) end
 

@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 --- 3D Vector class.
 ---@class Vector
@@ -18,39 +18,39 @@ _G.Vector = {}
 --- Env: `server` or `client`
 ---@param b Vector
 ---@return bool
-function Vector:__eq(b) return true end
+function Vector:__eq(b) end
 
 --- Overloaded .. Converts vectors to strings.  
 --- Env: `server` or `client`
 ---@return string
-function Vector:__tostring() return '' end
+function Vector:__tostring() end
 
 --- Cross product of two vectors.  
 --- Env: `server` or `client`
 ---@param b Vector
 ---@return Vector
-function Vector:Cross(b) return Vector() end
+function Vector:Cross(b) end
 
 --- Dot product of two vectors.  
 --- Env: `server` or `client`
 ---@param b Vector
 ---@return float
-function Vector:Dot(b) return 0 end
+function Vector:Dot(b) end
 
 --- Length of the Vector.  
 --- Env: `server` or `client`
 ---@return float
-function Vector:Length() return 0 end
+function Vector:Length() end
 
 --- Length of the Vector in the XY plane.  
 --- Env: `server` or `client`
 ---@return float
-function Vector:Length2D() return 0 end
+function Vector:Length2D() end
 
 --- Returns the vector normalized.  
 --- Env: `server` or `client`
 ---@return Vector
-function Vector:Normalized() return Vector() end
+function Vector:Normalized() end
 
 --- Linearly interpolates between two vectors.  
 --- This is most commonly used to find a point some fraction of the way along a line between two endpoints.  
@@ -59,5 +59,5 @@ function Vector:Normalized() return Vector() end
 ---@param b Vector
 ---@param t float
 ---@return Vector
-function Vector:Lerp(b, t) return Vector() end
+function Vector:Lerp(b, t) end
 

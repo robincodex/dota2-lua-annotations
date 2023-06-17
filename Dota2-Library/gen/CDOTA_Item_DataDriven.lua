@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_Item_DataDriven : CDOTA_Item
 _G.CDOTA_Item_DataDriven = {}
@@ -10,7 +10,7 @@ _G.CDOTA_Item_DataDriven = {}
 ---@param modifierName string
 ---@param modifierTable table|nil
 ---@return nil
-function CDOTA_Item_DataDriven:ApplyDataDrivenModifier(caster, target, modifierName, modifierTable)  end
+function CDOTA_Item_DataDriven:ApplyDataDrivenModifier(caster, target, modifierName, modifierTable) end
 
 --- Applies a data driven thinker at the location.  
 --- Env: only in `server`
@@ -19,5 +19,5 @@ function CDOTA_Item_DataDriven:ApplyDataDrivenModifier(caster, target, modifierN
 ---@param modifierName string
 ---@param modifierTable table|nil
 ---@return CDOTA_Buff
-function CDOTA_Item_DataDriven:ApplyDataDrivenThinker(caster, location, modifierName, modifierTable) return {} end
+function CDOTA_Item_DataDriven:ApplyDataDrivenThinker(caster, location, modifierName, modifierTable) end
 

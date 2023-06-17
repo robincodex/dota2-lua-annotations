@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_Ability_Aghanim_Spear : CDOTABaseAbility
 _G.CDOTA_Ability_Aghanim_Spear = {}
@@ -8,5 +8,5 @@ _G.CDOTA_Ability_Aghanim_Spear = {}
 ---@param target Vector
 ---@param start Vector
 ---@return nil
-function CDOTA_Ability_Aghanim_Spear:LaunchSpear(target, start)  end
+function CDOTA_Ability_Aghanim_Spear:LaunchSpear(target, start) end
 

@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 --- QAngle class.
 ---@class QAngle
@@ -13,25 +13,25 @@ _G.QAngle = {}
 --- Env: `server` or `client`
 ---@param b QAngle
 ---@return bool
-function QAngle:__eq(b) return true end
+function QAngle:__eq(b) end
 
 --- Overloaded .. Converts the QAngles to strings.  
 --- Env: `server` or `client`
 ---@return string
-function QAngle:__tostring() return '' end
+function QAngle:__tostring() end
 
 --- Returns the forward vector.  
 --- Env: `server` or `client`
 ---@return Vector
-function QAngle:Forward() return Vector() end
+function QAngle:Forward() end
 
 --- Returns the left vector.  
 --- Env: `server` or `client`
 ---@return Vector
-function QAngle:Left() return Vector() end
+function QAngle:Left() end
 
 --- Returns the up vector.  
 --- Env: `server` or `client`
 ---@return Vector
-function QAngle:Up() return Vector() end
+function QAngle:Up() end
 

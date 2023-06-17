@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CLogicRelay : CBaseEntity
 _G.CLogicRelay = {}
@@ -8,5 +8,5 @@ _G.CLogicRelay = {}
 ---@param activator CBaseEntity|nil
 ---@param caller CBaseEntity|nil
 ---@return nil
-function CLogicRelay:Trigger(activator, caller)  end
+function CLogicRelay:Trigger(activator, caller) end
 

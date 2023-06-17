@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class SteamInfo
 _G.SteamInfo = {}
@@ -6,5 +6,5 @@ _G.SteamInfo = {}
 --- Is the script connected to the public Steam universe.  
 --- Env: only in `server`
 ---@return bool
-function SteamInfo:IsPublicUniverse() return true end
+function SteamInfo:IsPublicUniverse() end
 

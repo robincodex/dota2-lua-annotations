@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CInfoData : CBaseEntity
 _G.CInfoData = {}
@@ -8,40 +8,40 @@ _G.CInfoData = {}
 ---@param tok string
 ---@param default Vector
 ---@return Vector
-function CInfoData:QueryColor(tok, default) return Vector() end
+function CInfoData:QueryColor(tok, default) end
 
 --- Query float data for this key.  
 --- Env: only in `server`
 ---@param tok string
 ---@param default float
 ---@return float
-function CInfoData:QueryFloat(tok, default) return 0 end
+function CInfoData:QueryFloat(tok, default) end
 
 --- Query int data for this key.  
 --- Env: only in `server`
 ---@param tok string
 ---@param default int
 ---@return int
-function CInfoData:QueryInt(tok, default) return 0 end
+function CInfoData:QueryInt(tok, default) end
 
 --- Query number data for this key.  
 --- Env: only in `server`
 ---@param tok string
 ---@param default float
 ---@return float
-function CInfoData:QueryNumber(tok, default) return 0 end
+function CInfoData:QueryNumber(tok, default) end
 
 --- Query string data for this key.  
 --- Env: only in `server`
 ---@param tok string
 ---@param default string
 ---@return string
-function CInfoData:QueryString(tok, default) return '' end
+function CInfoData:QueryString(tok, default) end
 
 --- Query vector data for this key.  
 --- Env: only in `server`
 ---@param tok string
 ---@param default Vector
 ---@return Vector
-function CInfoData:QueryVector(tok, default) return Vector() end
+function CInfoData:QueryVector(tok, default) end
 

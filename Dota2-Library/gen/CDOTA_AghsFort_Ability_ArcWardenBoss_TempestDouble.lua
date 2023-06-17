@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble : CDOTABaseAbility
 _G.CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble = {}
@@ -7,5 +7,5 @@ _G.CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble = {}
 --- Env: `server` or `client`
 ---@param doubles int
 ---@return nil
-function CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble:SetNumDoubles(doubles)  end
+function CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble:SetNumDoubles(doubles) end
 

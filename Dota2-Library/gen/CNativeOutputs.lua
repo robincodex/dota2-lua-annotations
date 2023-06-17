@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CNativeOutputs
 _G.CNativeOutputs = {}
@@ -8,11 +8,11 @@ _G.CNativeOutputs = {}
 ---@param arg1 string
 ---@param arg2 string
 ---@return nil
-function CNativeOutputs:AddOutput(arg1, arg2)  end
+function CNativeOutputs:AddOutput(arg1, arg2) end
 
 --- Initialize with number of outputs.  
 --- Env: `server` or `client`
 ---@param arg1 int
 ---@return nil
-function CNativeOutputs:Init(arg1)  end
+function CNativeOutputs:Init(arg1) end
 

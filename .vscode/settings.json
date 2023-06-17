@@ -10,5 +10,10 @@
     "typescript.tsc.autoDetect": "off",
     "Lua.runtime.version": "LuaJIT",
     "Lua.diagnostics.disable": ["lowercase-global"],
-    "Lua.typeFormat.config": { "format_line": "false" }
+    "Lua.typeFormat.config": {
+        "format_line": "false"
+    },
+    "Lua.workspace.library": [
+        "c:/Users/robin/.vscode/extensions/sumneko.lua-3.6.20-win32-x64/server/meta/387091a0"
+    ]
 }

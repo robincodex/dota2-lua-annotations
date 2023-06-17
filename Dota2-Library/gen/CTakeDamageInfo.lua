@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CTakeDamageInfo
 _G.CTakeDamageInfo = {}
@@ -7,127 +7,127 @@ _G.CTakeDamageInfo = {}
 --- Env: only in `server`
 ---@param addAmount float
 ---@return nil
-function CTakeDamageInfo:AddDamage(addAmount)  end
+function CTakeDamageInfo:AddDamage(addAmount) end
 
 ---   
 --- Env: only in `server`
 ---@param bitsDamageType int
 ---@return nil
-function CTakeDamageInfo:AddDamageType(bitsDamageType)  end
+function CTakeDamageInfo:AddDamageType(bitsDamageType) end
 
 ---   
 --- Env: only in `server`
 ---@return int
-function CTakeDamageInfo:GetAmmoType() return 0 end
+function CTakeDamageInfo:GetAmmoType() end
 
 ---   
 --- Env: only in `server`
 ---@return handle
-function CTakeDamageInfo:GetAttacker() return {} end
+function CTakeDamageInfo:GetAttacker() end
 
 ---   
 --- Env: only in `server`
 ---@return float
-function CTakeDamageInfo:GetDamage() return 0 end
+function CTakeDamageInfo:GetDamage() end
 
 ---   
 --- Env: only in `server`
 ---@return int
-function CTakeDamageInfo:GetDamageCustom() return 0 end
+function CTakeDamageInfo:GetDamageCustom() end
 
 ---   
 --- Env: only in `server`
 ---@return Vector
-function CTakeDamageInfo:GetDamageForce() return Vector() end
+function CTakeDamageInfo:GetDamageForce() end
 
 ---   
 --- Env: only in `server`
 ---@return Vector
-function CTakeDamageInfo:GetDamagePosition() return Vector() end
+function CTakeDamageInfo:GetDamagePosition() end
 
 ---   
 --- Env: only in `server`
 ---@return int
-function CTakeDamageInfo:GetDamageType() return 0 end
+function CTakeDamageInfo:GetDamageType() end
 
 ---   
 --- Env: only in `server`
 ---@return handle
-function CTakeDamageInfo:GetInflictor() return {} end
+function CTakeDamageInfo:GetInflictor() end
 
 ---   
 --- Env: only in `server`
 ---@return float
-function CTakeDamageInfo:GetOriginalDamage() return 0 end
+function CTakeDamageInfo:GetOriginalDamage() end
 
 ---   
 --- Env: only in `server`
 ---@return Vector
-function CTakeDamageInfo:GetReportedPosition() return Vector() end
+function CTakeDamageInfo:GetReportedPosition() end
 
 ---   
 --- Env: only in `server`
 ---@param bitsToTest int
 ---@return bool
-function CTakeDamageInfo:HasDamageType(bitsToTest) return true end
+function CTakeDamageInfo:HasDamageType(bitsToTest) end
 
 ---   
 --- Env: only in `server`
 ---@param scaleAmount float
 ---@return nil
-function CTakeDamageInfo:ScaleDamage(scaleAmount)  end
+function CTakeDamageInfo:ScaleDamage(scaleAmount) end
 
 ---   
 --- Env: only in `server`
 ---@param ammoType int
 ---@return nil
-function CTakeDamageInfo:SetAmmoType(ammoType)  end
+function CTakeDamageInfo:SetAmmoType(ammoType) end
 
 ---   
 --- Env: only in `server`
 ---@param attacker handle
 ---@return nil
-function CTakeDamageInfo:SetAttacker(attacker)  end
+function CTakeDamageInfo:SetAttacker(attacker) end
 
 ---   
 --- Env: only in `server`
 ---@param damage float
 ---@return nil
-function CTakeDamageInfo:SetDamage(damage)  end
+function CTakeDamageInfo:SetDamage(damage) end
 
 ---   
 --- Env: only in `server`
 ---@param damageCustom int
 ---@return nil
-function CTakeDamageInfo:SetDamageCustom(damageCustom)  end
+function CTakeDamageInfo:SetDamageCustom(damageCustom) end
 
 ---   
 --- Env: only in `server`
 ---@param damageForce Vector
 ---@return nil
-function CTakeDamageInfo:SetDamageForce(damageForce)  end
+function CTakeDamageInfo:SetDamageForce(damageForce) end
 
 ---   
 --- Env: only in `server`
 ---@param damagePosition Vector
 ---@return nil
-function CTakeDamageInfo:SetDamagePosition(damagePosition)  end
+function CTakeDamageInfo:SetDamagePosition(damagePosition) end
 
 ---   
 --- Env: only in `server`
 ---@param bitsDamageType int
 ---@return nil
-function CTakeDamageInfo:SetDamageType(bitsDamageType)  end
+function CTakeDamageInfo:SetDamageType(bitsDamageType) end
 
 ---   
 --- Env: only in `server`
 ---@param originalDamage float
 ---@return nil
-function CTakeDamageInfo:SetOriginalDamage(originalDamage)  end
+function CTakeDamageInfo:SetOriginalDamage(originalDamage) end
 
 ---   
 --- Env: only in `server`
 ---@param reportedPosition Vector
 ---@return nil
-function CTakeDamageInfo:SetReportedPosition(reportedPosition)  end
+function CTakeDamageInfo:SetReportedPosition(reportedPosition) end
 

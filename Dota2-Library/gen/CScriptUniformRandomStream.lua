@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CScriptUniformRandomStream
 _G.CScriptUniformRandomStream = {}
@@ -8,7 +8,7 @@ _G.CScriptUniformRandomStream = {}
 ---@param minVal float
 ---@param maxVal float
 ---@return float
-function CScriptUniformRandomStream:RandomFloat(minVal, maxVal) return 0 end
+function CScriptUniformRandomStream:RandomFloat(minVal, maxVal) end
 
 ---   
 --- Env: `server` or `client`
@@ -16,18 +16,18 @@ function CScriptUniformRandomStream:RandomFloat(minVal, maxVal) return 0 end
 ---@param maxVal float
 ---@param exponent float
 ---@return float
-function CScriptUniformRandomStream:RandomFloatExp(minVal, maxVal, exponent) return 0 end
+function CScriptUniformRandomStream:RandomFloatExp(minVal, maxVal, exponent) end
 
 ---   
 --- Env: `server` or `client`
 ---@param minVal int
 ---@param maxVal int
 ---@return int
-function CScriptUniformRandomStream:RandomInt(minVal, maxVal) return 0 end
+function CScriptUniformRandomStream:RandomInt(minVal, maxVal) end
 
 ---   
 --- Env: `server` or `client`
 ---@param percentage int
 ---@return bool
-function CScriptUniformRandomStream:RollPercentage(percentage) return true end
+function CScriptUniformRandomStream:RollPercentage(percentage) end
 

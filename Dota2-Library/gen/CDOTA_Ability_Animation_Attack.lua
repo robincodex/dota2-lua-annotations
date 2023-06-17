@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CDOTA_Ability_Animation_Attack : CDOTABaseAbility
 _G.CDOTA_Ability_Animation_Attack = {}
@@ -7,5 +7,5 @@ _G.CDOTA_Ability_Animation_Attack = {}
 --- Env: only in `server`
 ---@param rate float
 ---@return nil
-function CDOTA_Ability_Animation_Attack:SetPlaybackRate(rate)  end
+function CDOTA_Ability_Animation_Attack:SetPlaybackRate(rate) end
 

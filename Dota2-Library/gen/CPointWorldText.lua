@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CPointWorldText : CBaseModelEntity
 _G.CPointWorldText = {}
@@ -7,5 +7,5 @@ _G.CPointWorldText = {}
 --- Env: `server` or `client`
 ---@param message string
 ---@return nil
-function CPointWorldText:SetMessage(message)  end
+function CPointWorldText:SetMessage(message) end
 

@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CMarkupVolumeTagged : CBaseEntity
 _G.CMarkupVolumeTagged = {}
@@ -7,5 +7,5 @@ _G.CMarkupVolumeTagged = {}
 --- Env: only in `server`
 ---@param tagName string
 ---@return bool
-function CMarkupVolumeTagged:HasTag(tagName) return true end
+function CMarkupVolumeTagged:HasTag(tagName) end
 

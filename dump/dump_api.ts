@@ -19,8 +19,9 @@ import {
     toLuaParams,
     toLuaReturn,
 } from './utils';
+import { overrideLuaParams } from './dump_override';
 
-const diagnostic = '---@diagnostic disable: lowercase-global\n\n'; //'---@diagnostic enable\n\n';
+const diagnostic = '---@diagnostic disable: lowercase-global, missing-return\n\n'; //'---@diagnostic enable\n\n';
 
 export async function dumpAPI(rootPath: string) {
     const fileCache: Record<string, string> = { Global: diagnostic };
@@ -104,27 +105,26 @@ function toLuaFunc(func: FunctionDeclaration, className?: string) {
         text += '---@deprecated\n';
     }
 
+    // 泛型
+    const _funcName = `${className ? className + ':' : ''}${func.name}`;
+    const overrideParams = overrideLuaParams[_funcName];
+    if (overrideParams && overrideParams.Generic) {
+        text += `---@generic ` + overrideParams.Generic + '\n';
+    }
+
     const params = toLuaParams(func.args).join('\n');
     if (params) {
         text += params + '\n';
     }
 
-    const returnType = toLuaReturn(func.returns);
-    text += `---@return ${returnType}\n`;
+    if (overrideParams && overrideParams.Return) {
+        text += `---@return ${overrideParams.Return}\n`;
+    } else {
+        const returnType = toLuaReturn(func.returns);
+        text += `---@return ${returnType}\n`;
+    }
     text += `function ${className ? className + ':' : ''}${func.name}(${getArgNames(func.args).join(
         ', '
-    )}) ${makeDefaultReturn(returnType)} end\n\n`;
+    )}) end\n\n`;
     return text;
-}
-
-function makeDefaultReturn(returnType: string) {
-    if (/\|?nil\|?/.test(returnType) || !returnType.trim()) {
-        return '';
-    }
-    if (isEnum(returnType)) {
-        return 'return 0';
-    } else if (isTypeObject(returnType)) {
-        return 'return {}';
-    }
-    return defaultReturn[returnType] ?? 'return {}';
 }

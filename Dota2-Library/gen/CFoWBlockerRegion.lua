@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CFoWBlockerRegion : CBaseEntity
 _G.CFoWBlockerRegion = {}
@@ -9,7 +9,7 @@ _G.CFoWBlockerRegion = {}
 ---@param maxs Vector
 ---@param clearRegion bool
 ---@return nil
-function CFoWBlockerRegion:AddRectangularBlocker(mins, maxs, clearRegion)  end
+function CFoWBlockerRegion:AddRectangularBlocker(mins, maxs, clearRegion) end
 
 --- Sets or clears a blocker rectangle outline.  
 --- Env: only in `server`
@@ -17,5 +17,5 @@ function CFoWBlockerRegion:AddRectangularBlocker(mins, maxs, clearRegion)  end
 ---@param maxs Vector
 ---@param clearRegion bool
 ---@return nil
-function CFoWBlockerRegion:AddRectangularOutlineBlocker(mins, maxs, clearRegion)  end
+function CFoWBlockerRegion:AddRectangularOutlineBlocker(mins, maxs, clearRegion) end
 

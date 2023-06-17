@@ -1,4 +1,4 @@
----@diagnostic disable: lowercase-global
+---@diagnostic disable: lowercase-global, missing-return
 
 ---@class CEnvProjectedTexture : CBaseEntity
 _G.CEnvProjectedTexture = {}
@@ -7,25 +7,25 @@ _G.CEnvProjectedTexture = {}
 --- Env: only in `server`
 ---@param range float
 ---@return nil
-function CEnvProjectedTexture:SetFarRange(range)  end
+function CEnvProjectedTexture:SetFarRange(range) end
 
 --- Set light linear attenuation value.  
 --- Env: only in `server`
 ---@param atten float
 ---@return nil
-function CEnvProjectedTexture:SetLinearAttenuation(atten)  end
+function CEnvProjectedTexture:SetLinearAttenuation(atten) end
 
 --- Set light minimum range.  
 --- Env: only in `server`
 ---@param range float
 ---@return nil
-function CEnvProjectedTexture:SetNearRange(range)  end
+function CEnvProjectedTexture:SetNearRange(range) end
 
 --- Set light quadratic attenuation value.  
 --- Env: only in `server`
 ---@param atten float
 ---@return nil
-function CEnvProjectedTexture:SetQuadraticAttenuation(atten)  end
+function CEnvProjectedTexture:SetQuadraticAttenuation(atten) end
 
 --- Turn on/off light volumetrics.  
 --- Env: only in `server`
@@ -35,5 +35,5 @@ function CEnvProjectedTexture:SetQuadraticAttenuation(atten)  end
 ---@param planes int
 ---@param planeOffset float
 ---@return nil
-function CEnvProjectedTexture:SetVolumetrics(on, intensity, noise, planes, planeOffset)  end
+function CEnvProjectedTexture:SetVolumetrics(on, intensity, noise, planes, planeOffset) end
 
