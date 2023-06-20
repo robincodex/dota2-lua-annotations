@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.1.1
+
+Fixed annotations of enums alias
+
 ## v1.1.0
 
 Support generic type

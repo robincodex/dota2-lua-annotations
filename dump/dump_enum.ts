@@ -36,7 +36,7 @@ export async function dumpEnums(rootPath: string) {
             alias += e.members
                 .map(
                     (v) =>
-                        `---| '${v.name}'${
+                        `---| \`${v.name}\`${
                             v.description ? ' ' + v.description.replaceAll('\n', ' ') : ''
                         }`
                 )
