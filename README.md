@@ -1,3 +1,6 @@
+> [!NOTE]  
+> Since I no longer use the `sumneko.lua` plugin and no longer maintain this repository.
+
 # Dota2 Lua Annotations
 
 Dota2 lua api annotations for [lua-language-server](https://github.com/LuaLS/lua-language-server).
