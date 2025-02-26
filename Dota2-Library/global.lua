@@ -7,6 +7,9 @@ _G.PlayerResource = {}
 ---@type CDOTA_CustomUIManager
 _G.CustomUIManager = {}
 
+---@type CDOTA_CustomUIManager
+_G.CustomUI = {}
+
 ---@type CCustomNetTableManager
 _G.CustomNetTables = {}
 
