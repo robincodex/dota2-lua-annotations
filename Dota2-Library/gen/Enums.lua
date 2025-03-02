@@ -10206,15 +10206,35 @@ MODIFIER_STATE_DEBUFF_IMMUNE = 56
 
 --- Enum: `modifierstate`  
 --- Env: `server` or `client`
-MODIFIER_STATE_NO_INVISIBILITY_VISUALS = 57
+MODIFIER_STATE_ALLOW_PATHING_THROUGH_BASE_BLOCKER = 57
 
 --- Enum: `modifierstate`  
 --- Env: `server` or `client`
-MODIFIER_STATE_ALLOW_PATHING_THROUGH_BASE_BLOCKER = 58
+MODIFIER_STATE_IGNORING_MOVE_ORDERS = 58
 
 --- Enum: `modifierstate`  
 --- Env: `server` or `client`
-MODIFIER_STATE_LAST = 59
+MODIFIER_STATE_ATTACKS_ARE_MELEE = 59
+
+--- Enum: `modifierstate`  
+--- Env: `server` or `client`
+MODIFIER_STATE_CAN_USE_BACKPACK_ITEMS = 60
+
+--- Enum: `modifierstate`  
+--- Env: `server` or `client`
+MODIFIER_STATE_CASTS_IGNORE_CHANNELING = 61
+
+--- Enum: `modifierstate`  
+--- Env: `server` or `client`
+MODIFIER_STATE_ATTACKS_DONT_REVEAL = 62
+
+--- Enum: `modifierstate`  
+--- Env: `server` or `client`
+MODIFIER_STATE_NEUTRALS_DONT_ATTACK = 63
+
+--- Enum: `modifierstate`  
+--- Env: `server` or `client`
+MODIFIER_STATE_LAST = 64
 
 --- Enum: `ParticleAttachment_t`  
 --- Env: `server` or `client`
