@@ -2,7 +2,7 @@
     "name": "dota2-lua-annotations",
     "displayName": "Dota2 Lua Annotations",
     "description": "Dota2 lua api annotations for lua-language-server",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "license": "MIT",
     "publisher": "robincode",
     "icon": "logo.png",
