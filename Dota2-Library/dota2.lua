@@ -1,7 +1,7 @@
 ---@class Quaternion
 _G.Quaternion = {}
 
----@type CDOTA_BaseNPC
+---@type CBaseEntity
 _G.thisEntity = {}
 
 ---@param def table
